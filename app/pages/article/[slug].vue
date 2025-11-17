@@ -26,9 +26,9 @@ import { articles as articlesData } from "~/data/articles"
 import type { Article } from "~/data/articles"
 
 const route = useRoute()
-const slug = route.params.slug as string
+const slug = computed(() => route.params.slug as string)
 
-const article = computed<Article | undefined>(() => articlesData.find(a => a.slug === slug))
+const article = computed<Article | undefined>(() => articlesData.find(a => a.slug === slug.value))
 
 useHead({
   title: article.value?.title || 'บทความ',

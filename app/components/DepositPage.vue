@@ -10,7 +10,7 @@
                         <div class="">  </div>
 
                         <div class="tt_l tt_full fr_login" style="text-align: center; color: white; font-family: thaisanslite_r1;">
-                            <center>
+                            <div style="text-align: center;">
                                 <img
                                     class="amd2"
                                     @click="showSection('deposite_bank')"
@@ -26,7 +26,7 @@
                                     style="cursor: pointer;width:35%;display:none"
                                     alt="QR Code/Gateway"
                                 >
-                            </center>
+                            </div>
 
                             <div class="fr_center amd" style="font-size: clamp(25px, 2.5vw, 30px); color: red; width: 70%;">
                                 <div class="tt_l tt_full deposit-head"></div>
@@ -137,11 +137,11 @@
                                                     <div class="h_bank_qr_info" style="color:red">ฝากด้วยบัญชีที่ลงทะเบียนไว้เท่านั้น</div>
                                                     <div class="ct_qr_dsc" style="background-color:#9bf99c;">
                                                         <div class="ct_qr_dsc_l"></div>
-                                                        <center>
+                                                        <div style="text-align: center;">
                                                             <a class="h_bank_qr_info" id="qrimg_link" href="#" @click.prevent="downloadQR">
                                                                 <i class="fa fa-download"></i> บันทึก QRCode
                                                             </a>
-                                                        </center>
+                                                        </div>
                                                         <div class="ct_qr_dsc_r"></div>
                                                     </div>
                                                     <button id="closePopup_qr2" @click="closeQRPopup">x</button>

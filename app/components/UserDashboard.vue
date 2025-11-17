@@ -261,7 +261,7 @@ const emit = defineEmits<{
     connectLine: []
 }>()
 
-const timestamp = ref(Date.now())
+const timestamp = ref('')
 const isPromoModalVisible = ref(false)
 
 const formatCurrency = (amount: number) => {
@@ -287,11 +287,13 @@ const closePromoModal = () => {
     isPromoModalVisible.value = false
 }
 
-// Update timestamp periodically
+// Set timestamp only on client side to avoid hydration mismatch
 onMounted(() => {
     if (process.client) {
+        timestamp.value = Date.now().toString()
+
         const interval = setInterval(() => {
-            timestamp.value = Date.now()
+            timestamp.value = Date.now().toString()
         }, 60000) // Update every minute
 
         onUnmounted(() => {

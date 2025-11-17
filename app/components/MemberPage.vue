@@ -75,9 +75,9 @@ const handleLogout = () => {
 
     showSuccess('ออกจากระบบสำเร็จ')
 
-    // Redirect to login
+    // Redirect to login (use replace to not add to history)
     setTimeout(() => {
-        router.push('/login')
+        router.replace('/login')
     }, 1000)
 }
 
@@ -99,12 +99,12 @@ onMounted(() => {
                 userData.value = user
             } catch (e) {
                 console.error('Error parsing user cookie:', e)
-                // Redirect to login if cookie is invalid
-                router.push('/login')
+                // Redirect to login if cookie is invalid (use replace to not add to history)
+                router.replace('/login')
             }
         } else {
-            // Redirect to login if not logged in
-            router.push('/login')
+            // Redirect to login if not logged in (use replace to not add to history)
+            router.replace('/login')
         }
     }
 })

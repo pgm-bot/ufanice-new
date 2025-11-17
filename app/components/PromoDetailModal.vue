@@ -8,7 +8,7 @@
         <div class="swal-modal" role="dialog" aria-modal="true">
             <div class="swal-title">เงื่อนไขกิจกรรม!!</div>
             <div class="swal-text">
-                <center>
+                <div style="text-align: center;">
                     เพียงเดิมพันค่ายเกมไหนก็ได้ จัดลำดับโดยลูกค้าที่มี PnL สูงที่สุด รับรางวัลฟรีๆไปเลย!!
                     <br /><br />
                     *PnL คือ ยอดสุทธิ = ยอดถอนรวมในวันกิจกรรม - ยอดฝากรวมในวันกิจกรรม - ยอดเครดิตคงเหลือก่อนร่วมกิจกรรม
@@ -22,7 +22,7 @@
                     <a style="color: red;">
                         *บริษัทขอสงวนสิทธ์ในการเปลี่ยนแปลงเงื่อนไข ยกเลิกได้ โดยไม่ต้องแจ้งให้ทราบล่วงหน้า ทีมงานแอดมินขอเป็นกำลังใจให้นักเดิมพันทุกท่านโชคดีในการแข่งขันนะคะ
                     </a>
-                </center>
+                </div>
             </div>
             <div class="swal-footer">
                 <div class="swal-button-container">

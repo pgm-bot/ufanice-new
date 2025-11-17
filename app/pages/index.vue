@@ -27,9 +27,4 @@ useHead({
 })
 </script>
 
-<style scoped>
-.home-page {
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-</style>
+
