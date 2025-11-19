@@ -1,7 +1,7 @@
 <template>
   <div class="fix_footer" aria-hidden="true">
     <!-- เข้าสู่ระบบ / ข้อมูลส่วนตัว -->
-    <a :href="isLoggedIn ? '/member#ct_from' : '/login#ct_from'">
+    <a :href="isLoggedIn ? '/member#ct_from' : '/login'">
       <span class="link_ico ico_1">
         <i class="fas fa-sign-in-alt"></i>
       </span>

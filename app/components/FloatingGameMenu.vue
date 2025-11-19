@@ -27,60 +27,16 @@ interface GameItem {
     url: string
 }
 
-const isOpen = ref(true)
+interface Props {
+    games?: GameItem[]
+}
 
-const games: GameItem[] = [
-    {
-        name: 'Game 01',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game01.png',
-        url: ''
-    },
-    {
-        name: 'Game 02',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game02.png',
-        url: ''
-    },
-    {
-        name: 'Game 03',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game03.png',
-        url: ''
-    },
-    {
-        name: 'Game 04',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game04.png',
-        url: ''
-    },
-    {
-        name: 'Game 05',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game05.png',
-        url: ''
-    },
-    {
-        name: 'Game 06',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game06.png',
-        url: ''
-    },
-    {
-        name: 'Game 07',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game07.png',
-        url: ''
-    },
-    {
-        name: 'Game 08',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game08.png',
-        url: ''
-    },
-    {
-        name: 'Game 09',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game09.png',
-        url: ''
-    },
-    {
-        name: 'Game 10',
-        image: 'https://ufanance12.com/wp-content/uploads/2022/08/game10.png',
-        url: ''
-    }
-]
+const props = withDefaults(defineProps<Props>(), {
+    games: () => []
+})
+
+const isOpen = ref(true)
+const games = computed(() => props.games)
 
 const toggleMenu = () => {
     isOpen.value = !isOpen.value

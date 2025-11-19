@@ -21,4 +21,19 @@ useHead({
 
 <style>
 @import './assets/css/global.css';
+@import './assets/css/framework.css';
+@import './assets/css/imagehover.min.css';
+@media screen and (max-width: 800px) {
+    body {
+        background-image: none !important;
+    }
+}
+body {
+    background-color: #0b0e11;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center top;
+    background-image: url(https://ufanance12.com/wp-content/uploads/2022/06/web-background-image.png);
+    background-size: cover;
+}
 </style>

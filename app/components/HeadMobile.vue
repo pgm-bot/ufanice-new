@@ -1,35 +1,17 @@
 <template>
   <div class="tt_l tt_full head_mc">
-    <a
-      v-show="showInstallBanner"
-      class="tt_l logo_m install_m"
-      href="#"
-      @click.prevent="installApp"
-    >
-      <img
-        width="800"
-        height="220"
-        :src="installBannerUrl"
-        alt="install banner"
-      >
+    <a v-show="showInstallBanner" class="tt_l logo_m install_m" href="#" @click.prevent="installApp">
+      <img width="800" height="220" :src="installBannerUrl" alt="install banner">
     </a>
-    <a
-      v-show="showInstallBanner"
-      href="#"
-      class="team-popup-close logo_m install_m"
-      @click.prevent="closeAppBanner"
-    >
+    <a v-show="showInstallBanner" href="#" class="team-popup-close logo_m install_m" @click.prevent="closeAppBanner">
       ×
     </a>
 
     <div class="tt_l h-linem">
       <a :href="lineUrl" target="_blank" rel="noopener">
-        <img
-          width="140"
-          height="46"
+        <img width="140" height="46"
           src="https://ufanance12.com/wp-content/themes/ufanance.com/images/button-lineadd.jpg?v=1.0"
-          alt="line add friend"
-        >
+          alt="line add friend">
       </a>
     </div>
 
@@ -56,7 +38,7 @@ const showInstallBanner = ref(true)
 const deferredPrompt = shallowRef<BeforeInstallPromptEvent | null>(null)
 
 const homeUrl = ref('https://ufanance12.com/')
-const installBannerUrl = ref('https://ufanance12.com/wp-content/uploads/2022/07/head-download.png')
+const installBannerUrl = ref('https://ufanance12.com/head-download.png')
 const lineUrl = ref('https://line.me/ti/p/~@ufanancev4')
 const telegramUrl = ref('https://t.me/ufanancev2')
 const telegramId = ref('@ufanancev2')
@@ -119,108 +101,14 @@ onUnmounted(() => {
   }
 })
 </script>
-
 <style scoped>
-.head_mc {
-  display: none;
-  width: 100%;
-  background: #0c0016;
-  padding: 0px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-  z-index: 1000000;
-}
-
-.logo_m {
-  width: 100%;
-  text-align: center;
-  display: none;
-  margin: 0 0 10px 0;
-}
-
-.logo_m img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.install_m {
-  display: none;
-}
-
 .team-popup-close {
   color: #fff;
   width: 30px;
   font-size: 30px;
   position: absolute;
-  z-index: 1000001;
+  z-index: 999;
   top: 65px;
-  right: 0;
-  text-decoration: none;
-}
-
-.h-linem {
-  float: left;
-  width: 100%;
-  background-color: #01b901;
-  text-align: center;
-  height: 40px;
-  clear: both;
-  margin: 0;
-  overflow: hidden;
-}
-
-.h-linem img {
-  display: inline-block;
-  width: 140px;
-  height: auto;
-  padding: 0;
-}
-
-.h-linem a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  line-height: 40px;
-}
-
-.m-telegram {
-  float: left;
-  width: 100%;
-  text-align: center;
-  padding: 6px 10px;
-  background-color: #b1e2f7;
-  font-weight: bold;
-  border-top: 1px solid #269b1c;
-  border-bottom: 1px solid #000;
-  clear: both;
-  margin: 0;
-}
-
-.m-telegram a {
-  color: #000;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  text-decoration: none;
-}
-
-.m-telegram img {
-  width: 45px;
-}
-
-@media screen and (max-width: 980px) {
-  .head_mc {
-    display: block;
-  }
-
-  .logo_m {
-    display: block;
-  }
-
-  .install_m {
-    display: block;
-  }
+  right: 0px;
 }
 </style>

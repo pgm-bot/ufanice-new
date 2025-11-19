@@ -19,12 +19,8 @@
           </div>
         </div>
         <div class="owl-nav">
-          <button class="owl-prev" type="button" @click="prevSlide('desktop')">
-            <UiIcon name="chevron-left" :size="18" />
-          </button>
-          <button class="owl-next" type="button" @click="nextSlide('desktop')">
-            <UiIcon name="chevron-right" :size="18" />
-          </button>
+          <div class="owl-prev"  @click="prevSlide('desktop')"><i class="fas fa-chevron-left"></i></div>
+          <div class="owl-next" @click="nextSlide('desktop')"><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="owl-dots">
           <div
@@ -59,12 +55,8 @@
           </div>
         </div>
         <div class="owl-nav">
-          <button class="owl-prev" type="button" @click="prevSlide('mobile')">
-            <UiIcon name="chevron-left" :size="18" />
-          </button>
-          <button class="owl-next" type="button" @click="nextSlide('mobile')">
-            <UiIcon name="chevron-right" :size="18" />
-          </button>
+          <div class="owl-prev" @click="prevSlide('mobile')"><i class="fas fa-chevron-left"></i></div>
+          <div class="owl-next" @click="nextSlide('mobile')"><i class="fas fa-chevron-right"></i></div>
         </div>
         <div class="owl-dots">
           <div
@@ -89,41 +81,8 @@ interface SlideItem {
   title: string
 }
 
-const desktopSlides = ref<SlideItem[]>([
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2023/06/HEAD.jpg',
-    link: '/article/promotions',
-    title: 'Cover 2'
-  },
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2025/11/UFANANACE.png',
-    link: '/article/promotions',
-    title: 'กิจกรรมประจำเดือน'
-  },
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2023/06/01.jpg',
-    link: '/article/customer-reviews',
-    title: 'cover 3'
-  }
-])
-
-const mobileSlides = ref<SlideItem[]>([
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2023/10/UFANANCE_0.png',
-    link: '/login',
-    title: '1'
-  },
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2025/11/UFANANCE.png',
-    link: '/article/promotions',
-    title: 'กิจกรรมประจำเดือน'
-  },
-  {
-    image: 'https://ufanance12.com/wp-content/uploads/2023/10/UFANANCE.1_0.png',
-    link: '/article/customer-reviews',
-    title: '2'
-  }
-])
+const desktopSlides = ref<SlideItem[]>([])
+const mobileSlides = ref<SlideItem[]>([])
 
 const currentSlideDesktop = ref(0)
 const currentSlideMobile = ref(0)
@@ -188,7 +147,33 @@ const stopAutoPlay = () => {
   if (timerMobile) clearInterval(timerMobile)
 }
 
-onMounted(() => {
+const fetchSlides = async () => {
+  try {
+    const [desktopResponse, mobileResponse] = await Promise.all([
+      fetch('/api/hero-slides-desktop.json'),
+      fetch('/api/hero-slides-mobile.json')
+    ])
+
+    if (desktopResponse.ok) {
+      const desktopData = await desktopResponse.json()
+      desktopSlides.value = desktopData
+    } else {
+      console.error('Failed to fetch desktop slides data')
+    }
+
+    if (mobileResponse.ok) {
+      const mobileData = await mobileResponse.json()
+      mobileSlides.value = mobileData
+    } else {
+      console.error('Failed to fetch mobile slides data')
+    }
+  } catch (error) {
+    console.error('Error fetching slides:', error)
+  }
+}
+
+onMounted(async () => {
+  await fetchSlides()
   startAutoPlay()
 })
 
@@ -196,3 +181,26 @@ onUnmounted(() => {
   stopAutoPlay()
 })
 </script>
+
+<style scoped>
+/* แสดง slide_pc บนหน้าจอ desktop */
+.slide_pc {
+  display: block;
+}
+
+/* ซ่อน slide_mobile บนหน้าจอ desktop */
+.slide_mobile {
+  display: none;
+}
+
+/* บนหน้าจอ mobile (768px ลงมา) */
+@media (max-width: 768px) {
+  .slide_pc {
+    display: none;
+  }
+
+  .slide_mobile {
+    display: block;
+  }
+}
+</style>

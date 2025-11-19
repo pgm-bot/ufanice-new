@@ -1,45 +1,34 @@
 <template>
-  <div class="tt_l tt_full bg_3">
-    <div class="wrapper-c">
-      <div class="tt_l tt_full ct_home">
-        <h2 class="tt_l tt_full h_slot1">"ศูนย์รวมเว็บพนันออนไลน์ ที่ยิ่งใหญ่ที่สุดในประเทศ"</h2>
-        <div class="tt_l tt_full arhx"></div>
-        <div class="tt_l tt_full slide_b">
-          <div class="owl-carousel owl-theme">
-            <div class="owl-stage-outer">
-              <div class="owl-stage" :style="stageStyle">
-                <div v-for="(game, index) in games" :key="game.title + index" class="owl-item"
-                  :class="{ active: isActive(index) }">
-                  <div class="item">
-                    <div class="list_p4xx" :class="{ last: (index + 1) % 5 === 0 }">
-                      <a :href="game.link" :title="game.title">
-                        <figure class="imghvr-fold-down">
-                          <img :src="game.image" :alt="game.title">
-                          <figcaption>
-                            <img :src="game.image" :alt="game.title">
-                          </figcaption>
-                        </figure>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="owl-nav">
-              <button class="owl-prev" type="button" @click="scrollPrev">
-                <UiIcon name="chevron-left" :size="18" />
-              </button>
-              <button class="owl-next" type="button" @click="scrollNext">
-                <UiIcon name="chevron-right" :size="18" />
-              </button>
-            </div>
-            <div class="owl-dots">
-              <div v-for="(dot, index) in totalDots" :key="index" class="owl-dot"
-                :class="{ active: currentDot === index }" @click="goToDot(index)">
-                <span></span>
+
+  <div class="tt_l tt_full slide_b">
+    <div class="owl-carousel owl-theme" :class="{ 'owl-loaded': isLoaded }">
+      <div class="owl-stage-outer">
+        <div class="owl-stage" :style="stageStyle">
+          <div v-for="(game, index) in games" :key="game.title + index" class="owl-item"
+            :style="{ width: `${itemWidth}px`, marginRight: '10px' }" :class="{ active: isActive(index) }">
+            <div class="item">
+              <div class="list_p4xx" :class="{ last: (index + 1) % 5 === 0 }">
+                <a :href="game.link" :title="game.title">
+                  <figure class="imghvr-fold-down">
+                    <img :src="game.image" :alt="game.title">
+                    <figcaption>
+                      <img :src="game.image" :alt="game.title">
+                    </figcaption>
+                  </figure>
+                </a>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="owl-nav">
+        <div class="owl-prev" @click="scrollPrev"><i class="fas fa-chevron-left"></i></div>
+        <div class="owl-next" @click="scrollNext"><i class="fas fa-chevron-right"></i></div>
+      </div>
+      <div class="owl-dots">
+        <div v-for="(dot, index) in totalDots" :key="index" class="owl-dot" :class="{ active: currentDot === index }"
+          @click="goToDot(index)">
+          <span></span>
         </div>
       </div>
     </div>
@@ -53,23 +42,21 @@ interface GameItem {
   link: string
 }
 
-const games = ref<GameItem[]>([
-  { title: 'SA', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner01.jpg', link: '/login' },
-  { title: 'AE', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner02.jpg', link: '/login' },
-  { title: 'GDG', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner03.jpg', link: '/login' },
-  { title: 'VENUS', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner04.jpg', link: '/login' },
-  { title: 'EBET', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner05.jpg', link: '/login' },
-  { title: 'Spadegaming', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner06.jpg', link: '/login' },
-  { title: 'Joker', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner07.jpg', link: '/login' },
-  { title: 'UFA', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner08.jpg', link: '/login' },
-  { title: 'PG', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner09.jpg', link: '/login' },
-  { title: 'RED TIGER', image: 'https://ufanance12.com/wp-content/uploads/2022/07/banner10.jpg', link: '/login' }
-])
+interface Props {
+  games?: GameItem[]
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  games: () => []
+})
+
+const games = computed(() => props.games)
 
 const currentIndex = ref(0)
 const visibleCount = ref(5)
 const itemWidth = ref(198) // px
 const itemMargin = 10 // px
+const isLoaded = ref(false)
 
 const updateResponsive = () => {
   if (!process.client) return
@@ -131,6 +118,7 @@ let timer: ReturnType<typeof setInterval> | null = null
 
 onMounted(() => {
   updateResponsive()
+  isLoaded.value = true
   timer = setInterval(scrollNext, 4000)
 
   if (process.client) {

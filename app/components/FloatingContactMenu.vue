@@ -8,24 +8,45 @@
         </div>
 
         <!-- LINE Contact -->
-        <a class="tt_img_fixed" target="_blank" href="https://line.me/ti/p/~@ufanancev4">
-            <img src="https://ufanance12.com/wp-content/uploads/2024/12/@ufanancev4.png" alt="LINE QR Code">
-            <span class="tt_tx_line">LINE : @ufanancev4</span>
+        <a v-if="contactInfo?.line" class="tt_img_fixed" target="_blank" :href="contactInfo.line.url">
+            <img :src="contactInfo.line.qrImage" alt="LINE QR Code">
+            <span class="tt_tx_line">LINE : {{ contactInfo.line.username }}</span>
         </a>
 
         <!-- Telegram Contact -->
-        <a class="tt_img_fixed fx_telegram" target="_blank" href="https://t.me/ufanancev2">
-            <img src="https://ufanance12.com/wp-content/uploads/2024/09/qr-code.png" alt="Telegram QR Code">
+        <a v-if="contactInfo?.telegram" class="tt_img_fixed fx_telegram" target="_blank" :href="contactInfo.telegram.url">
+            <img :src="contactInfo.telegram.qrImage" alt="Telegram QR Code">
             <span class="tt_tx_telegram">
-                <img src="https://ufanance12.com/wp-content/themes/ufanance.com/images/telegram.png" alt="Telegram Icon">
-                Telegram : @ufanancev2
+                <img :src="contactInfo.telegram.icon" alt="Telegram Icon">
+                Telegram : {{ contactInfo.telegram.username }}
             </span>
         </a>
     </div>
 </template>
 
 <script setup lang="ts">
+interface ContactInfo {
+    line?: {
+        url: string
+        qrImage: string
+        username: string
+    }
+    telegram?: {
+        url: string
+        qrImage: string
+        icon: string
+        username: string
+    }
+}
+
+interface Props {
+    contactInfo?: ContactInfo
+}
+
+const props = defineProps<Props>()
+
 const isOpen = ref(true)
+const contactInfo = computed(() => props.contactInfo)
 
 const toggleMenu = () => {
     isOpen.value = !isOpen.value

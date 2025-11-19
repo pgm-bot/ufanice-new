@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page-template page-template-page page-template-register page-template-pageregister-php page page-id-24">
         <HeadMobile />
         <Header />
         <FloatingGameMenu />
@@ -23,14 +23,17 @@
                                     <form id="registerform" class="tt_l tt_full fr_re" @submit.prevent="handleRegister">
                                         <!-- Phone Number -->
                                         <div class="tt_l tt_full fr_sec">
-                                            <div class="tt_l fr_tx2x"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                                            <input v-model="form.phone" required class="form-control tt_bk" minlength="10"
-                                                maxlength="10" name="user" type="text" placeholder="เบอร์โทรศัพท์" size="10">
+                                            <div class="tt_l fr_tx2x"><i class="fa fa-phone" aria-hidden="true"></i>
+                                            </div>
+                                            <input v-model="form.phone" required class="form-control tt_bk"
+                                                minlength="10" maxlength="10" name="user" type="text"
+                                                placeholder="เบอร์โทรศัพท์" size="10">
                                         </div>
 
                                         <!-- Password -->
                                         <div class="tt_l tt_full fr_sec">
-                                            <div class="tt_l tt_full fr_tx2x"><i class="fa fa-key" aria-hidden="true"></i>
+                                            <div class="tt_l tt_full fr_tx2x"><i class="fa fa-key"
+                                                    aria-hidden="true"></i>
                                             </div>
                                             <input v-model="form.password" id="pass" required class="form-control tt_bk"
                                                 name="password" type="password" placeholder="ตั้งรหัสผ่าน">
@@ -39,19 +42,22 @@
                                         <!-- Confirm Password -->
                                         <div class="tt_l tt_full fr_sec">
                                             <div class="tt_l tt_full fr_tx2x fr_txx">ยืนยันรหัสผ่าน</div>
-                                            <input v-model="form.confirmPassword" id="cm_pass" class="form-control tt_bk fr_ixx"
-                                                type="password" placeholder="ยืนยันรหัสผ่านเดิมอีกครั้ง">
+                                            <input v-model="form.confirmPassword" id="cm_pass"
+                                                class="form-control tt_bk fr_ixx" type="password"
+                                                placeholder="ยืนยันรหัสผ่านเดิมอีกครั้ง">
                                         </div>
 
                                         <!-- Full Name -->
                                         <div class="tt_l tt_full fr_sec">
-                                            <div class="tt_l tt_full fr_tx2x"><i class="fa fa-user" aria-hidden="true"></i>
+                                            <div class="tt_l tt_full fr_tx2x"><i class="fa fa-user"
+                                                    aria-hidden="true"></i>
                                             </div>
                                             <input v-model="form.fullName" required class="form-control tt_bk" id="name"
                                                 name="name" placeholder="ชื่อ นามสกุล">
                                         </div>
                                         <div class="tt_l tt_full fr_sec_tx">
-                                            ชื่อบัญชีฝาก ต้องตรงกับบัญชีถอน ต้องภาษาไทยเท่านั้น ไม่เช่นนั้นจะถอนเงินไม่ได้
+                                            ชื่อบัญชีฝาก ต้องตรงกับบัญชีถอน ต้องภาษาไทยเท่านั้น
+                                            ไม่เช่นนั้นจะถอนเงินไม่ได้
                                         </div>
 
                                         <!-- Bank Selection -->
@@ -67,7 +73,8 @@
                                                 <option value="6">ธนาคาร เจพีมอร์แกน เชส สาขากรุงเทพฯ</option>
                                                 <option value="12">ธนาคาร ซิตี้แบ้งค์</option>
                                                 <option value="17">ธนาคาร ซีไอเอ็มบี ไทย จำกัด (มหาชน)</option>
-                                                <option value="123">ธนาคารซูมิโตโม มิตซุย ทรัสต์ (ไทย) จำกัด (มหาชน) </option>
+                                                <option value="123">ธนาคารซูมิโตโม มิตซุย ทรัสต์ (ไทย) จำกัด (มหาชน)
+                                                </option>
                                                 <option value="31">ธนาคาร ซูมิโตโม มิตซุย แบงกิ้ง คอร์ปอเรชั่น</option>
                                                 <option value="26">ธนาคาร ดอยซ์แบงก็</option>
                                                 <option value="8">ธนาคาร ทหารไทยธนชาต จำกัด (มหาชน)</option>
@@ -80,7 +87,8 @@
                                                 <option value="20">ธนาคาร เมกะ สากลพาณิชย์ จำกัด (มหาชน)</option>
                                                 <option value="18">ธนาคาร ยูโอบี จำกัด (มหาชน)</option>
                                                 <option value="111">ธนาคาร แลนด์ แอนด์ เฮ้าส์</option>
-                                                <option value="122">ธนาคาร สแตนดาร์ดชาร์เตอร์ด (ไทย) จำกัด (มหาชน)</option>
+                                                <option value="122">ธนาคาร สแตนดาร์ดชาร์เตอร์ด (ไทย) จำกัด (มหาชน)
+                                                </option>
                                                 <option value="121">ธนาคารแห่งประเทศจีน (ไทย)</option>
                                                 <option value="21">ธนาคาร แห่งอเมริกาฯ</option>
                                                 <option value="24">ธนาคาร ออมสิน</option>
@@ -96,7 +104,8 @@
                                             <div class="tt_l tt_full fr_tx2x"><i class="fa fa-credit-card"
                                                     aria-hidden="true"></i></div>
                                             <input v-model="form.accountNumber" class="form-control tt_bk" required
-                                                id="account" name="account" type="text" placeholder="เลขบัญชีธนาคารของท่าน">
+                                                id="account" name="account" type="text"
+                                                placeholder="เลขบัญชีธนาคารของท่าน">
                                         </div>
 
                                         <!-- LINE ID -->
@@ -216,158 +225,19 @@ useHead({
     ]
 })
 </script>
-
 <style scoped>
-/* ========================================
-   CSS สำหรับหน้าสมัครสมาชิก - จาก css.css
-   ======================================== */
-
-/* 1. Layout Structure */
-.p_gl {
-    position: relative;
-    margin-top: 0px;
-    border-radius: 0px;
-    padding: 40px 0;
+.page-template-register .fr_login {
+    padding-top: 0px;
 }
 
-.bg {
-    margin-left: 0px;
-    background-color: #000;
-}
-
-/* 2. Form Container */
 .register_ft {
     width: 55%;
 }
 
-.fr_h1 {
-    text-align: center;
-    color: #725b27;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 22px;
-    line-height: 22px;
-    border-bottom: 2px solid #333;
-    padding: 0px 0px 10px 0px;
-}
-
-.fr_re {
-    margin: 20px 0px 0px 0px;
-}
-
-/* 3. Form Fields */
-.fr_sec {
+.page-template-register .fr_center {
     width: 100%;
-    height: 40px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 5px 0px;
-    border-radius: 5px;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 18px;
-    line-height: 18px;
-    overflow: hidden;
 }
 
-.fr_tx2x {
-    border-bottom: 1px solid #ccc;
-    border-radius: 0px;
-    padding: 5px 0px 0px 0px;
-    border-right: 1px solid #ccc;
-    width: 15%;
-    color: #000;
-    text-align: center;
-    height: 40px;
-    background-color: #e9ecef;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 20px;
-    line-height: 28px;
-    margin: 0px 0px 0px 0px;
-}
-
-.fr_tx2x img {
-    max-width: 100%;
-    height: auto;
-    margin-top: -5px;
-}
-
-.fr_txx {
-    font-size: 16px;
-    line-height: 16px;
-    padding-top: 12px;
-}
-
-.tt_bk {
-    width: 85%;
-    height: 40px;
-    border: 0;
-    background-color: #fff;
-    padding: 0px 0px 0px 10px;
-    margin: 0px 0px 0px 0px;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 18px;
-    line-height: 16px;
-}
-
-.tt_bk:focus {
-    outline: none;
-}
-
-.fr_ixx {
-    /* Additional styling for confirm password if needed */
-}
-
-.fr_sc {
-    width: 85%;
-    height: 40px;
-    border: 0;
-    background-color: #fff;
-    color: #777;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 18px;
-    line-height: 18px;
-    padding: 0px 0px 0px 8px;
-}
-
-.fr_sec_tx {
-    text-align: center;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 18px;
-    line-height: 18px;
-    padding: 10px 10px 10px 10px;
-    color: #721c24;
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    margin: 0px 0px 5px 0px;
-}
-
-/* 4. Submit Button */
-.fr_submit_bk {
-    width: 100%;
-    text-align: center;
-    height: 55px;
-    font-weight: bold;
-    margin: 0px 0px 15px 0px;
-    color: #fff;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 26px;
-    line-height: 48px;
-    border: 0;
-    box-shadow: 5px 5px 8px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: inset 0px 1px 0px 0px #f29c93;
-    background: linear-gradient(to bottom, #fe1a00 5%, #ce0100 100%);
-    background-color: #fe1a00;
-    border: 1px solid #d83526;
-    text-shadow: 0px 1px 0px #b23e35;
-}
-
-.fr_submit_bk:hover {
-    opacity: 0.8;
-}
-
-/* 5. Video Section */
 .fr_repage {
     width: 43%;
     padding: 30px 0px 0px 20px;
@@ -387,75 +257,5 @@ useHead({
     left: 0;
     width: 100%;
     height: 100%;
-}
-
-/* 6. Utility Classes */
-.mt-10 {
-    margin-top: 10px;
-}
-
-.thaitheme_read {
-    width: 100%;
-    padding: 0px 0px 10px 0px;
-    color: #333;
-    font-family: thaisanslite_r1, 'ThaiSansLite', sans-serif;
-    font-size: 22px;
-    line-height: 28px;
-    overflow: hidden;
-}
-
-.thaitheme_read a {
-    color: #333;
-}
-
-.thaitheme_read img {
-    max-width: 100%;
-    height: auto;
-    padding: 0;
-}
-
-/* 7. Page Specific Overrides */
-.fr_login {
-    padding-top: 0px;
-}
-
-.fr_center {
-    width: 100%;
-}
-
-/* ========================================
-   Responsive Design
-   ======================================== */
-
-@media screen and (max-width: 800px) {
-    .fr_repage,
-    .register_ft {
-        width: 100%;
-    }
-
-    .fr_login {
-        padding-bottom: 10px;
-    }
-
-    .fr_repage {
-        padding: 0px 0px 0px 0px;
-    }
-}
-
-@media screen and (max-width: 620px) {
-    .fr_center {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .fr_tx2x {
-        font-size: 18px;
-    }
-
-    .fr_h1 {
-        font-size: 20px;
-        line-height: 20px;
-    }
 }
 </style>

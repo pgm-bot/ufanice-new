@@ -1,162 +1,216 @@
 <template>
-  <div class="page-template page-template-page page-template-login page-template-pagelogin-php page page-id-66">
-    <HeadMobile></HeadMobile>
     <Header></Header>
-    <FloatingGameMenu></FloatingGameMenu>
-    <FloatingContactMenu></FloatingContactMenu>
-    <LoginPage></LoginPage>
+    <div class="wrapper-c">
+        <div class="tt_l tt_full p_member">
+            <div id="ct_from" class="tt_l tt_full title_page">
+                <h1>เข้าสู่ระบบ</h1>
+            </div>
+            <div class="tt_l tt_full tt_content bg_tr">
+                <div class="tt_l tt_full">
+                    <div class="tt_l tt_full">
+                        <div class="tt_l tt_full fr_login fr_login_form" id="fr_login_form">
+                            <div class="fr_center">
+
+                                <a style="displayxx: none;padding-top: 10px;" href="../../line.me/login_uselib.php"
+                                    class="  btn-success-line " type="button" id="btn-linelogin">เข้าสู่ระบบด้วย
+                                    LINE</a>
+                                <div style="display: none;" id="linelogin-c"></div>
+
+                                <!-- Login Form -->
+                                <form id="loginform" @submit.prevent="handleLogin">
+                                    <div class="tt_l fr_input">
+                                        <input
+                                            v-model="loginForm.phone"
+                                            id="phone"
+                                            class="form-control tt_fr"
+                                            maxlength="10"
+                                            name="phone"
+                                            type="text"
+                                            placeholder="กรอกเบอร์โทรศัพท์">
+                                        <input
+                                            v-model="loginForm.password"
+                                            id="password"
+                                            class="form-control tt_fr"
+                                            maxlength="24"
+                                            name="password"
+                                            type="password"
+                                            placeholder="กรอกรหัสผ่าน">
+                                    </div>
+                                    <input type="hidden" name="task" value="login">
+                                    <button class="tt_r fr_submit" type="submit">
+                                        <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <Footer></Footer>
     <FixedFooter></FixedFooter>
-    <BackToTop></BackToTop>
-  </div>
 </template>
+
 <script setup lang="ts">
+import Swal from 'sweetalert2'
+
+interface LoginForm {
+    phone: string
+    password: string
+}
+
 interface UserData {
-  username: string
-  displayName: string
-  credit: number
-  password?: string
+    memberId: string
+    username: string
+    credit: number
+    gamePassword: string
+    lineConnected: boolean
 }
+
+const router = useRouter()
 const isLoggedIn = ref(false)
-const userData = ref<UserData>({
-  username: 'USER001',
-  displayName: 'สมชาย ใจดี',
-  credit: 10000.00,
-  password: ''
+const loginForm = ref<LoginForm>({
+    phone: '',
+    password: ''
 })
-const handleLogin = async (data: { phone: string; password: string }) => {
-  console.log('Login attempt:', data)
-  // TODO: Implement actual login API call
-  // Simulate login for demo
-  if (data.phone && data.password) {
-    // เก็บข้อมูล user ลง cookie (ในต้นฉบับใช้ cookie 'users')
-    if (process.client) {
-      setCookie('users', JSON.stringify({
-        username: 'USER' + data.phone.slice(-4),
-        displayName: 'สมาชิก ' + data.phone.slice(-4),
-        credit: 10000.00,
-        phone: data.phone
-      }), 30)
-    }
-    // อัพเดต state
-    userData.value = {
-      username: 'USER' + data.phone.slice(-4),
-      displayName: 'สมาชิก ' + data.phone.slice(-4),
-      credit: 10000.00,
-      password: data.password
-    }
-    isLoggedIn.value = true
-    // แสดง success message
-    if (process.client) {
-      alert('เข้าสู่ระบบสำเร็จ')
-    }
-  } else {
-    if (process.client) {
-      alert('กรุณากรอกข้อมูลให้ครบถ้วน')
-    }
-  }
+
+// Helper functions for notifications
+const showSuccess = (title: string, text?: string) => {
+    Swal.fire({
+        icon: 'success',
+        title: title,
+        text: text,
+        timer: 2000,
+        showConfirmButton: false
+    })
 }
-const handleLogout = () => {
-  // ลบ cookie
-  if (process.client) {
-    deleteCookie('users')
-    alert('ออกจากระบบสำเร็จ')
-  }
-  isLoggedIn.value = false
-  userData.value = {
-    username: '',
-    displayName: '',
-    credit: 0
-  }
+
+const showError = (title: string, text?: string) => {
+    Swal.fire({
+        icon: 'error',
+        title: title,
+        text: text,
+        confirmButtonText: 'ลองใหม่'
+    })
 }
-const handleGameEntry = (type: string) => {
-  console.log('Game entry type:', type)
-  // TODO: Implement actual game entry logic
-}
-const promotions = [
-  {
-    id: 'gaojing',
-    image: 'https://ufanance12.com/ev1010.png',
-    alt: 'กิจกรรมสายเลือดเกาจิ้ง',
-    caption: 'ตามหานักเดิมพัน สายเลือดเกาจิ้ง 30 อันดับ ทำกำไรสูงที่สุด แจกเงินรางวัลรวมสูงสุด 30 ล้านบาท วันเดียวเท่านั้น ท้าพิสูจน์เกาจิ้งตัวจริง',
-    primaryLink: 'https://ufanance12.com/kj-r/#ct_from',
-    cta: {
-      text: 'สมัครเข้าร่วมกิจกรรม',
-      link: 'https://ufanance12.com/kj-r/#ct_from'
-    },
-    detailLink: 'javascript:void(0)'
-  },
-  {
-    id: 'ten-streak',
-    image: 'https://ufanance12.com/wp-content/uploads/2023/06/04-1.jpg',
-    alt: 'แทงติดกัน 10 ตา',
-    caption: 'แทงถูก หรือ ผิด ติดกัน 10 ตารวด!<br>รับโบนัสทันทีสูงสุดไม่เกิน 5,000 บาท อ่านรายละเอียดเพิ่มเติม',
-    primaryLink: null,
-    cta: {
-      text: 'แลกโบนัส',
-      link: 'https://line.me/ti/p/~@ufanancev4'
-    },
-    detailLink: 'javascript:void(0)'
-  },
-  {
-    id: 'birthday',
-    image: 'https://ufanance12.com/wp-content/uploads/2023/06/03-1.jpg',
-    alt: 'โปรวันเกิด',
-    caption: 'เมื่อถึงวันเกิดของท่าน เพียงแค่ท่านโชว์บัตรประชาชนให้ทีมงาน<br>รับทันทีเครดิต 500 บาท (สามารถถอนเงินได้ทันที)',
-    primaryLink: null,
-    cta: {
-      text: 'แลกโบนัส',
-      link: 'https://line.me/ti/p/~@ufanancev4'
-    },
-    detailLink: 'javascript:void(0)'
-  }
-]
-// Cookie Management Functions (จากต้นฉบับ)
 const setCookie = (name: string, value: string, days: number) => {
-  if (!process.client) return
-  const d = new Date()
-  d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000))
-  const expires = 'expires=' + d.toUTCString()
-  document.cookie = name + '=' + value + ';' + expires + ';path=/'
+    if (!process.client) return
+    const d = new Date()
+    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000))
+    const expires = 'expires=' + d.toUTCString()
+    document.cookie = name + '=' + value + ';' + expires + ';path=/'
 }
-const getCookie = (name: string): string | null => {
-  if (!process.client) return null
-  const nameEQ = name + '='
-  const ca = document.cookie.split(';')
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i]
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length)
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
-  }
-  return null
-}
-const deleteCookie = (name: string) => {
-  if (!process.client) return
-  document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-}
-// Check existing login on mount
-onMounted(() => {
-  if (process.client) {
-    const userCookie = getCookie('users')
-    if (userCookie) {
-      try {
-        const user = JSON.parse(userCookie)
-        userData.value = user
-        isLoggedIn.value = true
-      } catch (e) {
-        console.error('Error parsing user cookie:', e)
-      }
+
+const handleLogin = async () => {
+    if (!loginForm.value.phone || !loginForm.value.password) {
+        showError('กรุณากรอกข้อมูลให้ครบถ้วน')
+        return
     }
-  }
-})
-useHead({
-  title: 'เข้าสู่ระบบ - UFANANCE',
-  meta: [
-    { name: 'description', content: 'เข้าสู่ระบบ UFANANCE คาสิโนออนไลน์ บาคาร่า สล็อต แทงบอล' }
-  ],
-  link: [
-    // FontAwesome
-    { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }
-  ]
-})
+
+    // TODO: Implement actual API call
+    // Simulate login for demo
+    try {
+        // สร้างข้อมูลผู้ใช้
+        const memberId = 'ufnblnc' + loginForm.value.phone.slice(-6)
+        const user: UserData = {
+            memberId: memberId,
+            username: loginForm.value.phone,
+            credit: 0, // จะได้จาก API
+            gamePassword: 'AbX922123', // จะได้จาก API
+            lineConnected: false
+        }
+
+        // บันทึกลง cookie
+        if (process.client) {
+            setCookie('users', JSON.stringify(user), 30)
+        }
+
+        // แสดง success message
+        showSuccess('เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${user.username}`)
+
+        // Clear form
+        loginForm.value = { phone: '', password: '' }
+
+        // Redirect to member page
+        setTimeout(() => {
+            router.push('/member')
+        }, 1000)
+    } catch (error) {
+        console.error('Login error:', error)
+        showError('เข้าสู่ระบบไม่สำเร็จ', 'กรุณาลองใหม่อีกครั้ง')
+    }
+}
 </script>
+
+<style scoped>
+#btn-linelogin:before {
+    position: absolute;
+    font-family: "Font Awesome 5 Brands";
+    content: "\f3c0";
+    margin-left: -41px;
+    font-size: 36px;
+    top: -4px;
+}
+
+.btn-success-line {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    height: 48px;
+    background-color: #00b900;
+    border-color: #00b900;
+    border-radius: 5px;
+    padding-left: 47px;
+    cursor: pointer;
+    margin-top: .25rem !important;
+    display: block;
+    width: 100%;
+    color: #fff;
+    position: relative;
+}
+
+#linelogin-c {
+    display: block;
+    position: relative;
+    height: 50px;
+}
+
+#linelogin-c:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    border-top: 1px solid #151515;
+}
+
+#linelogin-c::after {
+    text-align: center !important;
+    font-size: 18px;
+    content: "หรือ";
+    position: absolute;
+    width: 80px;
+    left: calc(50% - 40px);
+    height: 100%;
+    line-height: 300%;
+    background-color: white;
+}
+
+.swal2-container {
+    z-index: 99999999;
+}
+</style>
