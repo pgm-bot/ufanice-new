@@ -24,7 +24,7 @@
                     <a href="/deposit" class="btn-block btn-gold">
                         <i class="fas fa-wallet"></i> ฝากเงิน
                     </a>
-                    <a href="/withdrawal" class="btn-block btn-silver">
+                    <a href="/withdraw" class="btn-block btn-silver">
                         <i class="fas fa-hand-holding-usd"></i> ถอนเงิน
                     </a>
                 </div>
@@ -56,7 +56,7 @@
                     </a>
                 </div>
                 <div class="other-list other-list-2">
-                    <a href="/รางวัลประจำเดือน" class="btn-dark-tri hvr-buzz-out">
+                    <a href="/rewards" class="btn-dark-tri hvr-buzz-out">
                         <i class="fas fa-star"></i>
                         <p>รางวัลประจำเดือน</p>
                     </a>
@@ -64,13 +64,13 @@
 
                 <!-- Row 3 -->
                 <div class="other-list other-list-1">
-                    <a href="/เปิดไพ่รับเงินแจกวันละ-5" class="btn-dark-tri hvr-buzz-out">
+                    <a href="/card" class="btn-dark-tri hvr-buzz-out">
                         <img src="https://ufanance12.com/wp-content/themes/ufanance.com/images/card.png" alt="Card">
                         <p>เปิดไพ่เสี่ยงโชค</p>
                     </a>
                 </div>
                 <div class="other-list other-list-2">
-                    <a href="/หมุนกงล้อเสี่ยงโชค" class="btn-dark-tri hvr-buzz-out">
+                    <a href="/spin" class="btn-dark-tri hvr-buzz-out">
                         <img src="https://ufanance12.com/wp-content/themes/ufanance.com/images/wheels.png" alt="Wheel">
                         <p>หมุนกงล้อเสี่ยงโชค</p>
                     </a>

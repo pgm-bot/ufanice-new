@@ -80,24 +80,28 @@
                 <br>
 
                 <!-- Friends Table -->
-                <div class="table-container">
-                  <table class="friends-table">
-                    <thead>
-                      <tr>
-                        <th>User</th>
-                        <th>รายได้ของท่าน</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr v-if="friends.length === 0">
-                        <td colspan="2" class="no-data">ยังไม่มีเพื่อนที่แนะนำ</td>
-                      </tr>
-                      <tr v-for="friend in friends" :key="friend.id" class="data-row">
-                        <td>{{ friend.username }}</td>
-                        <td class="amount">{{ formatCurrency(friend.earning) }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div class="tt_l tt_full fr_tx1">
+                  <div class="table100 ver1 m-b-110" style="margin: auto; width: 90%; padding-top: 5px;">
+                    <div class="table100-body js-pscroll ps ps--active-y">
+                      <table>
+                        <tbody id="memaff">
+                          <tr class="row100 body">
+                            <td class="cell100 column2x" style="text-align: center;">User</td>
+                            <td class="cell100 column1x" style="text-align: center;">รายได้ของท่าน</td>
+                          </tr>
+                          <tr v-if="friends.length === 0" class="row100 body">
+                            <td colspan="2" class="cell100" style="text-align: center; padding: 20px; color: #999;">
+                              ยังไม่มีเพื่อนที่แนะนำ
+                            </td>
+                          </tr>
+                          <tr v-for="friend in friends" :key="friend.id" class="row100 body">
+                            <td class="cell100 column2x" style="text-align: center;">{{ friend.username }}</td>
+                            <td class="cell100 column1x" style="text-align: center;">{{ formatCurrency(friend.earning) }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
                 </div>
 
                 <!-- Social Share Buttons -->
@@ -105,52 +109,46 @@
                   <tbody>
                     <tr>
                       <!-- LINE -->
-                      <td>
-                        <center>
-                          <a
-                            :href="lineShareUrl"
-                            target="_blank"
-                            class="share-link"
-                          >
-                            <img src="https://ufanance12.com/img/line-icon.png" class="social-icon">
-                            <br>แนะนำผ่าน LINE
-                          </a>
-                        </center>
+                      <td class="text-center">
+                        <a
+                          :href="lineShareUrl"
+                          target="_blank"
+                          class="share-link"
+                        >
+                          <img src="https://ufanance12.com/img/line-icon.png" class="social-icon">
+                          <br>แนะนำผ่าน LINE
+                        </a>
                       </td>
 
                       <!-- Facebook Messenger -->
-                      <td>
-                        <center>
-                          <a
-                            :href="messengerShareUrl"
-                            target="_blank"
-                            class="share-link"
-                          >
-                            <img src="https://ufanance12.com/img/facebook-messenger-icon.png" class="social-icon">
-                            <br>แนะนำผ่าน Messenger
-                          </a>
-                        </center>
+                      <td class="text-center">
+                        <a
+                          :href="messengerShareUrl"
+                          target="_blank"
+                          class="share-link"
+                        >
+                          <img src="https://ufanance12.com/img/facebook-messenger-icon.png" class="social-icon">
+                          <br>แนะนำผ่าน Messenger
+                        </a>
                       </td>
 
                       <!-- Facebook -->
-                      <td>
-                        <center>
-                          <a
-                            :href="facebookShareUrl"
-                            target="_blank"
-                            class="share-link"
-                          >
-                            <img src="https://ufanance12.com/img/facebook_circle-512.png" class="social-icon">
-                            <br>แนะนำผ่าน Facebook
-                          </a>
-                        </center>
+                      <td class="text-center">
+                        <a
+                          :href="facebookShareUrl"
+                          target="_blank"
+                          class="share-link"
+                        >
+                          <img src="https://ufanance12.com/img/facebook_circle-512.png" class="social-icon">
+                          <br>แนะนำผ่าน Facebook
+                        </a>
                       </td>
                     </tr>
                   </tbody>
                 </table>
 
                 <!-- Promotional Image -->
-                <center>
+                <div class="text-center">
                   <img
                     class="promo-image"
                     src="https://ufanance12.com/wp-content/uploads/2024/10/05.jpg"
@@ -178,7 +176,7 @@
                     สามารถทำรายได้เดือน 100,000 บาทง่ายๆเลยทีเดียว และรายได้ทุกบาททุกสตางค์ของท่านสามารถตรวจสอบได้ทุกขั้นตอน
                     งานนี้แจกจริง จริงจ่าย ที่นี้ที่เดียวที่ให้คุณมากกว่าใคร ก๊อปปี้ลิ้งค์ด้านบนและข้อความด้านล่างนี้ นำไปแชร์ได้เลย
                   </p>
-                </center>
+                </div>
 
               </div>
             </div>
@@ -292,34 +290,27 @@ const transferCredit = async () => {
 
 // Fetch affiliate data
 const fetchAffiliateData = async () => {
-  try {
-    // TODO: Replace with actual API call
-    const response = await fetch('/api/affiliate/data')
+  // TODO: Uncomment when API is ready
+  // try {
+  //   const response = await fetch('/api/affiliate/data')
+  //   if (response.ok) {
+  //     const data = await response.json()
+  //     affiliateLink.value = data.affiliateLink || ''
+  //     friendCount.value = data.friendCount || 0
+  //     creditAmount.value = data.creditAmount || 0
+  //     friends.value = data.friends || []
+  //     return
+  //   }
+  // } catch (error) {
+  //   console.error('Failed to fetch affiliate data:', error)
+  // }
 
-    if (response.ok) {
-      const data = await response.json()
-      affiliateLink.value = data.affiliateLink || ''
-      friendCount.value = data.friendCount || 0
-      creditAmount.value = data.creditAmount || 0
-      friends.value = data.friends || []
-    } else {
-      // Mock data for development
-      const userId = 'MTc2MjA3XzE3NjIwNw=='
-      affiliateLink.value = `https://www.affufanance.com/register.php?af=${userId}`
-      friendCount.value = 0
-      creditAmount.value = 0
-      friends.value = []
-    }
-  } catch (error) {
-    console.error('Failed to fetch affiliate data:', error)
-
-    // Use mock data on error
-    const userId = 'MTc2MjA3XzE3NjIwNw=='
-    affiliateLink.value = `https://www.affufanance.com/register.php?af=${userId}`
-    friendCount.value = 0
-    creditAmount.value = 0
-    friends.value = []
-  }
+  // Use mock data for development
+  const userId = 'MTc2MjA3XzE3NjIwNw=='
+  affiliateLink.value = `https://www.affufanance.com/register.php?af=${userId}`
+  friendCount.value = 0
+  creditAmount.value = 0
+  friends.value = []
 }
 
 // Fetch data on component mount
@@ -337,324 +328,130 @@ useHead({
 </script>
 
 <style scoped>
-/* Page Layout */
-.wrapper-c {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.p_gl {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Title */
-.title_page {
-  background: linear-gradient(90deg, #f3c31a 0%, #ffd700 100%);
-  padding: 20px;
+/* Text alignment utility */
+.text-center {
   text-align: center;
 }
 
-.title_page h1 {
-  margin: 0;
-  color: #1e3c72;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-/* Content Area */
-.tt_content {
-  padding: 30px 20px;
-}
-
-.body_c {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.thaitheme_read {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 10px;
-  padding: 25px;
-}
-
-/* Entry Title */
-.entry-title {
-  color: #1e3c72;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.icon-bar {
-  display: inline-block;
-  width: 4px;
-  height: 20px;
-  background: #f3c31a;
-  margin-right: 10px;
-  vertical-align: middle;
-}
-
-/* Info Card */
+/* Card header info */
 .card-header-info {
-  background: #479988;
-  padding: 15px;
-  color: white;
-  border-radius: 8px;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-/* Form Sections */
-.fr_sec {
-  margin-bottom: 20px;
-}
-
-.fr_tx2x {
-  color: #1e3c72;
-  font-size: 1.1rem;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 12px 15px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: white;
-  color: #333;
-}
-
-.form-control.aff {
-  cursor: pointer;
-  user-select: all;
-}
-
-.form-control.aff:focus {
-  outline: none;
-  border-color: #f3c31a;
-}
-
-.form-control[readonly] {
-  background: #f8f9fa;
-}
-
-.aff_c,
-.aff_am {
-  width: 100% !important;
-  background: #f8f9fa !important;
-  border: 2px solid #ddd !important;
-}
-
-/* Buttons */
-.btn-copy {
-  display: block;
-  width: 100%;
-  padding: 15px;
-  background: linear-gradient(135deg, #479988 0%, #56b3a0 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-decoration: none;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.btn-copy:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.btn-copy i {
-  margin-right: 8px;
-}
-
-.fr_submit_bk {
   background: linear-gradient(135deg, #f3c31a 0%, #ffd700 100%);
   color: #1e3c72;
-  margin-bottom: 10px;
-}
-
-.fr_submit_bk:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none !important;
-}
-
-.fr_tx1 {
-  color: #666;
-  font-size: 0.9rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Table */
-.table-container {
-  margin: 30px 0;
-  overflow-x: auto;
-}
-
-.friends-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
+  padding: 15px 20px;
   border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: 0 2px 8px rgba(243, 195, 26, 0.3);
 }
 
-.friends-table th,
-.friends-table td {
-  padding: 12px 15px;
-  text-align: center;
-  border: 1px solid #ddd;
-}
-
-.friends-table th {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-  color: white;
-  font-weight: bold;
-}
-
-.friends-table .data-row:hover {
-  background: #f0f8ff;
-}
-
-.friends-table .amount {
-  color: #28a745;
-  font-weight: 600;
-}
-
-.friends-table .no-data {
-  padding: 40px;
-  color: #999;
-  font-style: italic;
-}
-
-/* Social Share */
+/* Social share table */
 .social-share-table {
   width: 100%;
-  border: none;
   margin: 30px 0;
+  border-collapse: collapse;
 }
 
 .social-share-table td {
-  width: 33%;
-  border: none;
-  padding: 15px;
-  text-align: center;
+  padding: 20px 10px;
+  vertical-align: top;
 }
 
 .share-link {
+  display: inline-block;
   text-decoration: none;
   color: #1e3c72;
-  display: block;
   transition: all 0.3s;
 }
 
 .share-link:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  color: #f3c31a;
 }
 
 .social-icon {
-  max-width: 80%;
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
   margin-bottom: 10px;
+  transition: all 0.3s;
 }
 
-/* Promo Image */
+.share-link:hover .social-icon {
+  transform: scale(1.1);
+}
+
+/* Promotional image */
 .promo-image {
   max-width: 100%;
-  width: 1080px;
   height: auto;
   border-radius: 10px;
-  margin: 30px 0;
+  margin: 20px 0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Description */
+/* Description text */
 .description {
   text-align: left;
   line-height: 1.8;
   color: #333;
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  margin: 20px 0;
+  margin-top: 20px;
+}
+.table100-body {
+    max-height: 585px;
+    overflow: auto;
+}
+.js-pscroll {
+    position: relative;
+    overflow: hidden;
+}
+table {
+    width: 100%;
+}
+.table100.ver1 td {
+    font-family: Lato-Regular;
+    font-size: 15px;
+    color: #808080;
+    line-height: 1.4;
+}
+.table100-body td {
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.table100-body td {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.thaitheme_read a {
+    color: black !important;
+}
+.table100.ver1 {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -o-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 }
 
-.description b {
-  color: #1e3c72;
-  font-size: 1.1rem;
+.table100 {
+    position: relative;
+    padding-top: 60px;
+}
+.table100 {
+    background-color: #fff;
 }
 
-.description u {
-  color: #f3c31a;
-  font-weight: 600;
+.m-b-110 {
+  margin-bottom: 20px;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
-  .wrapper-c {
-    padding: 10px;
-  }
-
-  .tt_content {
-    padding: 20px 10px;
-  }
-
-  .thaitheme_read {
-    padding: 15px;
-  }
-
-  .title_page h1 {
-    font-size: 1.5rem;
-  }
-
-  .entry-title {
-    font-size: 1.2rem;
-  }
-
-  .social-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  .description {
-    font-size: 0.9rem;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .title_page h1 {
-    font-size: 1.3rem;
-  }
-
-  .entry-title {
-    font-size: 1.1rem;
-  }
-
-  .fr_tx2x {
-    font-size: 1rem;
-  }
-
-  .btn-copy {
-    font-size: 1rem;
-    padding: 12px;
+  .social-share-table td {
+    display: block;
+    width: 100%;
+    padding: 15px 10px;
   }
 
   .social-icon {
@@ -662,8 +459,9 @@ useHead({
     height: 60px;
   }
 
-  .promo-image {
-    margin: 20px 0;
+  .card-header-info {
+    font-size: 0.9rem;
+    padding: 12px 15px;
   }
 }
 </style>

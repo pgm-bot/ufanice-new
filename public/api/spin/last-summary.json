@@ -1,0 +1,65 @@
+{
+  "status": 200,
+  "data": [
+    {
+      "id": 1,
+      "username": "UFA12345",
+      "money": "1000",
+      "transDate": "2024-11-20 20:38:13"
+    },
+    {
+      "id": 2,
+      "username": "UFA67890",
+      "money": "500",
+      "transDate": "2024-11-20 19:24:54"
+    },
+    {
+      "id": 3,
+      "username": "UFA11111",
+      "money": "2000",
+      "transDate": "2024-11-20 18:15:30"
+    },
+    {
+      "id": 4,
+      "username": "UFA22222",
+      "money": "150",
+      "transDate": "2024-11-20 17:45:12"
+    },
+    {
+      "id": 5,
+      "username": "UFA33333",
+      "money": "300",
+      "transDate": "2024-11-20 16:30:45"
+    },
+    {
+      "id": 6,
+      "username": "UFA44444",
+      "money": "100",
+      "transDate": "2024-11-20 15:20:22"
+    },
+    {
+      "id": 7,
+      "username": "UFA55555",
+      "money": "50",
+      "transDate": "2024-11-20 14:10:18"
+    },
+    {
+      "id": 8,
+      "username": "UFA66666",
+      "money": "200",
+      "transDate": "2024-11-20 13:05:33"
+    },
+    {
+      "id": 9,
+      "username": "UFA77777",
+      "money": "ทอง 1 บาท",
+      "transDate": "2024-11-20 12:50:27"
+    },
+    {
+      "id": 10,
+      "username": "UFA88888",
+      "money": "5",
+      "transDate": "2024-11-20 11:40:15"
+    }
+  ]
+}
