@@ -1,80 +1,68 @@
 <template>
-  <div class="contentbody">
-    <div id="section-content" class="container mt-0">
-      <div class="bar-back">
-        <nuxt-link to="../../member">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i> หน้าหลัก
-        </nuxt-link>
+  <HeadMobile></HeadMobile>
+  <Header></Header>
+  <div class="wrapper-c">
+    <div class="tt_l tt_full p_gl">
+      <div id="ct_from" class="tt_l tt_full title_page">
+        <h1>ปั่นกงล้อลุ้นรับทอง 1 บาท ได้ทุกวัน ปั่นได้ทุกวันวันละครั้ง</h1>
       </div>
-      <div
-        class="p-2 w-100 bg-light main-content align-self-stretch"
-        style="min-height: calc((100vh - 106px) - 90px);"
-      >
-        <div
-          class="bgwhitealpha text-secondary shadow-sm rounded p-2 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0"
-        >
-          <div class="lotto-title">
-            <h5 style="color:#343a40">
-              <i class="fas fa-gift" aria-hidden="true"></i>
-              ปั่นกงล้อลุ้นรับทอง 1 บาท ได้ทุกวัน
-            </h5>
-          </div>
-        </div>
-        <div
-          class="bgwhitealpha text-secondary shadow-sm rounded p-0 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0"
-        >
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-12 text-center canvas-container">
-                <canvas
-                  id="canvas"
-                  width="652"
-                  height="708"
-                  data-responsiveminwidth="652"
-                  data-responsivescaleheight="true"
-                  data-responsivemargin="50"
-                  class="background_spin"
-                  @click="spin"
-                >
-                  <p style="{color: white}" align="center">
-                    Sorry, your browser doesn't support canvas. Please try
-                    another.
-                  </p>
-                </canvas>
-              </div>
-            </div>
+      <div class="tt_l tt_full tt_content bg" style="background-color: black;">
+        <div class="thaitheme_read">
 
-            <div class="col-12 pl-0 pr-0 text-center">
-              <div
-                class="account-table table-content table-responsive"
-                style="max-width:800px;margin:auto"
-              >
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <td style="text-align: center" colspan="3" class="boxTd">รายการรับรางวัลล่าสุด</td>
-                    </tr>
-                    <tr>
-                      <td style="min-width:70px" class="boxTd">USER</td>
-                      <td style="min-width:50px" class="boxTd">จำนวน</td>
-                      <td style="min-width:170px" class="boxTd">วันที่</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="d in data" :key="d.id">
-                      <td>{{d.username}}</td>
-                      <td>{{d.money}}</td>
-                      <td>{{d.transDate}}</td>
-                    </tr>
-                  </tbody>
-                </table>
+
+          <div class="p-2 w-100 bg-light main-content align-self-stretch"
+            style="min-height: calc((100vh - 106px) - 90px);">
+            <div
+              class="bgwhitealpha text-secondary shadow-sm rounded p-0 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0">
+              <div class="container">
+                <div class="row justify-content-center">
+                  <div class="col-12 text-center canvas-container">
+                    <canvas id="canvas" width="652" height="708" data-responsiveminwidth="652"
+                      data-responsivescaleheight="true" data-responsivemargin="50" class="background_spin"
+                      @click="spin">
+                      <p style="color: white; text-align:center">
+                        Sorry, your browser doesn't support canvas. Please try
+                        another.
+                      </p>
+                    </canvas>
+                  </div>
+                </div>
+
+                <div class="col-12 pl-0 pr-0 text-center">
+                  <div class="account-table table-content table-responsive" style="max-width:800px;margin:auto">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <td style="text-align: center" colspan="3" class="boxTd">รายการรับรางวัลล่าสุด</td>
+                        </tr>
+                        <tr>
+                          <td style="min-width:70px" class="boxTd">USER</td>
+                          <td style="min-width:50px" class="boxTd">จำนวน</td>
+                          <td style="min-width:170px" class="boxTd">วันที่</td>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr v-for="d in data" :key="d.id">
+                          <td>{{ d.username }}</td>
+                          <td>{{ d.money }}</td>
+                          <td>{{ d.transDate }}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+
+
         </div>
       </div>
     </div>
   </div>
+  <Footer></Footer>
+  <FixedFooter></FixedFooter>
 </template>
 
 <script>
@@ -316,6 +304,7 @@ export default {
   background: #c69608;
   color: white !important;
 }
+
 /* table td {
   padding: 0.3rem;
 } */
@@ -329,16 +318,23 @@ canvas {
   margin-top: -60px;
   padding: 0px;
 }
+
+.text-center {
+  text-align: center;
+}
+
 .background_spin {
   background-image: url('/wheel.png');
   background-size: cover;
   background-position: center 6px;
   background-repeat: no-repeat;
 }
+
 @media (max-width: 576px) {
-  .canvas-container{
+  .canvas-container {
     margin-top: -30px;
   }
+
   .background_spin {
     background-position: center 6px;
   }

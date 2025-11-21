@@ -1,99 +1,99 @@
 <template>
-  <div class="contentbody">
-    <div id="section-content" class="container mt-0">
-      <div class="bar-back">
-        <nuxt-link to="../../member">
-          <i class="fas fa-chevron-left" aria-hidden="true"></i> หน้าหลัก
-        </nuxt-link>
+  <HeadMobile></HeadMobile>
+  <Header></Header>
+  <div class="wrapper-c">
+    <div class="tt_l tt_full p_gl">
+      <div id="ct_from" class="tt_l tt_full title_page">
+        <h1>Open Card</h1>
       </div>
-      <div
-        class="p-2 w-100 bg-light main-content align-self-stretch"
-        style="min-height: calc((100vh - 106px) - 90px);"
-      >
-        <div
-          class="bgwhitealpha text-secondary shadow-sm rounded p-2 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0"
-        >
-          <div class="lotto-title">
-            <h5 style="color:#343a40">
-              <i class="fas fa-gift" aria-hidden="true"></i>
-              คลิก..เพื่อเปิดไพ่ลุ้นรับโบนัสประจำวัน
-            </h5>
-          </div>
-        </div>
-        <div
-          class="bgwhitealpha text-secondary shadow-sm rounded p-2 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0"
-        >
-          <div class="container box">
-            <div class="row body_">
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 0)" @click="pickCard(0)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
-                    </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+      <div class="tt_l tt_full tt_content bg">
+        <div class="thaitheme_read">
+          <div class="p-2 w-100 bg-light main-content align-self-stretch"
+            style="min-height: calc((100vh - 106px) - 90px);">
+            <div
+              class="bgwhitealpha text-secondary shadow-sm rounded p-2 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0">
+              <div class="lotto-title">
+                <h5 style="color:#343a40">
+                  <i class="fas fa-gift" aria-hidden="true"></i>
+                  คลิก..เพื่อเปิดไพ่ลุ้นรับโบนัสประจำวัน
+                </h5>
+              </div>
+            </div>
+            <div
+              class="bgwhitealpha text-secondary shadow-sm rounded p-2 xtarget col-lotto d-flex flex-row justify-content-between mb-1 pb-0">
+              <div class="container box">
+                <div class="row body_">
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 0)" @click="pickCard(0)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 1)" @click="pickCard(1)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
-                    </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 2)" @click="pickCard(2)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
-                    </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 1)" @click="pickCard(1)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 3)" @click="pickCard(3)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
-                      <!-- <img v-if="result" :src="`/card_${result}.jpg`" alt="result" /> -->
-                    </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 4)" @click="pickCard(4)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
-                    </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 2)" @click="pickCard(2)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-4 col-lg-2 p-0">
-                <div class="flip-card" :class="getActiveClass(pick == 5)" @click="pickCard(5)">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                      <img src="/card.jpg" alt="Avatar" />
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 3)" @click="pickCard(3)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                          <!-- <img v-if="result" :src="`/card_${result}.jpg`" alt="result" /> -->
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
                     </div>
-                    <div class="flip-card-back">
-                      <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                  </div>
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 4)" @click="pickCard(4)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-sm-4 col-lg-2 p-0">
+                    <div class="flip-card" :class="getActiveClass(pick == 5)" @click="pickCard(5)">
+                      <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                          <img src="/card.jpg" alt="Avatar" />
+                        </div>
+                        <div class="flip-card-back">
+                          <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -104,6 +104,8 @@
       </div>
     </div>
   </div>
+  <Footer></Footer>
+  <FixedFooter></FixedFooter>
 </template>
 
 <script>
@@ -270,7 +272,7 @@ export default {
   overflow-x: auto;
 }
 
-.body_ > div {
+.body_>div {
   flex: 0 0 auto;
   min-width: 0;
 }
@@ -353,14 +355,17 @@ export default {
   .box {
     padding: 0px;
   }
+
   .flip-card {
     height: 300px;
   }
+
   .flip-card-inner img {
     height: 300px;
   }
+
   /* ให้ไพ่อยู่ในแถวเดียวแต่เล็กลง */
-  .body_ > div {
+  .body_>div {
     flex: 0 0 33.333%;
     max-width: 33.333%;
   }
@@ -370,14 +375,17 @@ export default {
   .flip-card {
     height: 220px;
   }
+
   .flip-card-inner img {
     height: 220px;
   }
+
   /* ให้ไพ่ 2 ใบต่อแถวบน mobile */
   .body_ {
     flex-wrap: wrap;
   }
-  .body_ > div {
+
+  .body_>div {
     flex: 0 0 50%;
     max-width: 50%;
   }
@@ -387,9 +395,11 @@ export default {
   .txx {
     font-size: 18px;
   }
+
   .flip-card {
     height: 250px;
   }
+
   .flip-card-inner img {
     height: 250px;
   }
@@ -400,7 +410,8 @@ export default {
   .body_ {
     flex-wrap: nowrap;
   }
-  .body_ > div {
+
+  .body_>div {
     flex: 0 0 16.666%;
     max-width: 16.666%;
   }
