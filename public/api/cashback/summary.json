@@ -1,0 +1,41 @@
+{
+  "status": 200,
+  "message": "Cashback summary data",
+  "data": {
+    "totalAmount": 125.50,
+    "minimumAmount": 15,
+    "cashbackRate": 0.3,
+    "lastUpdateTime": "13:20",
+    "canWithdraw": true,
+    "games": [
+      {
+        "id": 1,
+        "name": "Sexy Baccarat",
+        "rate": 0.3,
+        "monthlyIncome": 45.75,
+        "dailyIncome": 12.30
+      },
+      {
+        "id": 2,
+        "name": "SA Gaming",
+        "rate": 0.3,
+        "monthlyIncome": 32.80,
+        "dailyIncome": 8.50
+      },
+      {
+        "id": 3,
+        "name": "WM Casino",
+        "rate": 0.3,
+        "monthlyIncome": 28.45,
+        "dailyIncome": 6.20
+      },
+      {
+        "id": 4,
+        "name": "Slot Games",
+        "rate": 0.3,
+        "monthlyIncome": 18.50,
+        "dailyIncome": 4.80
+      }
+    ]
+  }
+}

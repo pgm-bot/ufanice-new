@@ -1,0 +1,36 @@
+{
+  "status": 200,
+  "message": "Promotions data",
+  "data": [
+    {
+      "id": 1,
+      "title": "ตามหานักเดิมพัน สายเลือดเกาจิ้ง 30อันดับ ทำกำไรสูงที่สุด",
+      "description": "แจกเงินรางวัลรวมสูงสุด 30 ล้านบาท วันเดียวเท่านั้น ท้าพิสูจน์เกาจิ้งตัวจริง",
+      "image": "https://ufanance12.com/ev1010.png",
+      "registerLink": "/kj-r/#ct_from",
+      "registerText": "สมัครเข้าร่วมกิจกรรม",
+      "detailsId": 1,
+      "isExternal": false
+    },
+    {
+      "id": 2,
+      "title": "แทงถูก หรือ ผิด ติดกัน 10 ตารวด!รับเงินทันที",
+      "description": "รับโบนัสทันทีสูงสุดไม่เกิน 5,000 บาท อ่านรายละเอียดเพิ่มเติม",
+      "image": "https://ufanance12.com/wp-content/uploads/2023/06/04-1.jpg",
+      "registerLink": "https://line.me/ti/p/~@ufanancev4",
+      "registerText": "แลกโบนัส",
+      "detailsId": 2,
+      "isExternal": true
+    },
+    {
+      "id": 3,
+      "title": "เมื่อถึงวันเกิดของท่าน เพียงแค่ท่านโชว์บัตรประชาชนให้ทีมงาน",
+      "description": "รับทันทีเครดิต 500 บาท (สามารถถอนเงินได้ทันที)",
+      "image": "https://ufanance12.com/wp-content/uploads/2023/06/03-1.jpg",
+      "registerLink": "https://line.me/ti/p/~@ufanancev4",
+      "registerText": "แลกโบนัส",
+      "detailsId": 4,
+      "isExternal": true
+    }
+  ]
+}

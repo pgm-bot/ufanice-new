@@ -155,83 +155,34 @@
                 <img src="https://ufanance12.com/img/ดาวน์โหลด.jpg" class="pro-title" width="100%" alt="Promotions">
                 <br><br>
 
-                <!-- Promotion 1: เกาจิ้ง -->
-                <table style="width: 100%;margin-bottom: 15px;">
+                <!-- Dynamic Promotions from API -->
+                <table v-for="promo in promotions" :key="promo.id" style="width: 100%;margin-bottom: 15px;">
                     <tbody>
                         <tr style="border-bottom:1pt solid #e0e0e0;">
                             <td style="vertical-align: top !important;">
-                                <a href="/kj-r/#ct_from" target="_blank">
-                                    <img src="https://ufanance12.com/ev1010.png" style="width: 100%" alt="Event">
+                                <a v-if="!promo.isExternal" :href="promo.registerLink" :target="promo.isExternal ? '_blank' : '_self'">
+                                    <img :src="promo.image" style="width: 100%" :alt="promo.title">
                                 </a>
+                                <img v-else :src="promo.image" style="width: 100%" :alt="promo.title">
                                 <br>
                                 <div style="text-align: center">
                                     <span class="fr_name">
-                                        ตามหานักเดิมพัน สายเลือดเกาจิ้ง 30อันดับ ทำกำไรสูงที่สุด
-                                        แจกเงินรางวัลรวมสูงสุด 30 ล้านบาท วันเดียวเท่านั้น ท้าพิสูจน์เกาจิ้งตัวจริง
+                                        {{ promo.title }}<br v-if="promo.description">
+                                        {{ promo.description }}
                                     </span>
                                 </div>
                                 <br>
                             </td>
                             <td>
                                 <div class="tt_l tt_full fr_link_r pro-bt">
-                                    <a style="width: 80px;" href="/kj-r/#ct_from" target="_blank">สมัครเข้าร่วมกิจกรรม</a>
+                                    <a style="width: 80px;"
+                                       :href="promo.registerLink"
+                                       :target="promo.isExternal ? '_blank' : '_self'">
+                                        {{ promo.registerText }}
+                                    </a>
                                 </div>
                                 <div class="tt_l tt_full fr_link_r" style="margin-top: 10px;">
-                                    <a style="width: 80px;" href="#" @click.prevent="showPromoDetail(1)">รายละเอียด</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Promotion 2: แทงติดกัน 10 ตา -->
-                <table style="width: 100%;margin-bottom: 15px;">
-                    <tbody>
-                        <tr style="border-bottom:1pt solid #e0e0e0;">
-                            <td style="vertical-align: top !important;">
-                                <img src="https://ufanance12.com/wp-content/uploads/2023/06/04-1.jpg" style="width: 100%" alt="Promotion">
-                                <br>
-                                <div style="text-align: center">
-                                    <span class="fr_name">
-                                        แทงถูก หรือ ผิด ติดกัน 10 ตารวด!รับเงินทันที<br>
-                                        รับโบนัสทันทีสูงสุดไม่เกิน 5,000 บาท อ่านรายละเอียดเพิ่มเติม
-                                    </span>
-                                </div>
-                                <br>
-                            </td>
-                            <td>
-                                <div class="tt_l tt_full fr_link_r pro-bt">
-                                    <a style="width: 80px;" href="https://line.me/ti/p/~@ufanancev4" target="_blank">แลกโบนัส</a>
-                                </div>
-                                <div class="tt_l tt_full fr_link_r" style="margin-top: 10px;">
-                                    <a style="width: 80px;" href="#" @click.prevent="showPromoDetail(2)">รายละเอียด</a>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- Promotion 3: โปรวันเกิด -->
-                <table style="width: 100%;margin-bottom: 15px;">
-                    <tbody>
-                        <tr style="border-bottom:1pt solid #e0e0e0;">
-                            <td style="vertical-align: top !important;">
-                                <img src="https://ufanance12.com/wp-content/uploads/2023/06/03-1.jpg" style="width: 100%" alt="Birthday">
-                                <br>
-                                <div style="text-align: center">
-                                    <span class="fr_name">
-                                        เมื่อถึงวันเกิดของท่าน เพียงแค่ท่านโชว์บัตรประชาชนให้ทีมงาน<br>
-                                        รับทันทีเครดิต 500 บาท (สามารถถอนเงินได้ทันที)
-                                    </span>
-                                </div>
-                                <br>
-                            </td>
-                            <td>
-                                <div class="tt_l tt_full fr_link_r pro-bt">
-                                    <a style="width: 80px;" href="https://line.me/ti/p/~@ufanancev4" target="_blank">แลกโบนัส</a>
-                                </div>
-                                <div class="tt_l tt_full fr_link_r" style="margin-top: 10px;">
-                                    <a style="width: 80px;" href="#" @click.prevent="showPromoDetail(4)">รายละเอียด</a>
+                                    <a style="width: 80px;" href="#" @click.prevent="showPromoDetail(promo.detailsId)">รายละเอียด</a>
                                 </div>
                             </td>
                         </tr>
@@ -239,7 +190,7 @@
                 </table>
             </div>
         </section>
-        <PromoDetailModal :visible="isPromoModalVisible" @close="closePromoModal" />
+        <PromoDetailModal :visible="isPromoModalVisible" :promo-id="selectedPromoId" @close="closePromoModal" />
     </div>
 </template>
 
@@ -250,6 +201,17 @@ interface UserData {
     credit: number
     gamePassword: string
     lineConnected: boolean
+}
+
+interface Promotion {
+    id: number
+    title: string
+    description: string
+    image: string
+    registerLink: string
+    registerText: string
+    detailsId: number
+    isExternal: boolean
 }
 
 const props = defineProps<{
@@ -263,6 +225,8 @@ const emit = defineEmits<{
 
 const timestamp = ref('')
 const isPromoModalVisible = ref(false)
+const selectedPromoId = ref<number | undefined>(undefined)
+const promotions = ref<Promotion[]>([])
 
 const formatCurrency = (amount: number) => {
     return amount.toLocaleString('th-TH', {
@@ -279,12 +243,26 @@ const connectLine = () => {
     emit('connectLine')
 }
 
-const showPromoDetail = (_promoId: number) => {
+const showPromoDetail = (promoId: number) => {
+    selectedPromoId.value = promoId
     isPromoModalVisible.value = true
 }
 
 const closePromoModal = () => {
     isPromoModalVisible.value = false
+    selectedPromoId.value = undefined
+}
+
+const loadPromotions = async () => {
+    try {
+        const response = await fetch('/api/promotions.json')
+        const result = await response.json()
+        if (result.status === 200 && result.data) {
+            promotions.value = result.data
+        }
+    } catch (error) {
+        console.error('Failed to load promotions:', error)
+    }
 }
 
 // Set timestamp only on client side to avoid hydration mismatch
@@ -299,6 +277,9 @@ onMounted(() => {
         onUnmounted(() => {
             clearInterval(interval)
         })
+
+        // Load promotions
+        loadPromotions()
     }
 })
 </script>
