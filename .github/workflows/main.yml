@@ -1,0 +1,39 @@
+name: Build And Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+        image: client-ufaflow
+        tags: latest
+        registry: ghcr.io
+        username: ${{ secrets.GHCR_USERNAME }}
+        password: ${{ secrets.GHCR_TOKEN }}
+
+    - name: DigitalOcean Kubernetes
+      uses: matootie/dokube@v1.3.4
+      with:
+        personalAccessToken: ${{ secrets.DIGITALOCEAN_TOKEN }}
+        clusterName: huay-hit
+
+    - name: apply new version
+      run: |
+        kubectl apply -f client.yaml
+        kubectl rollout restart deployment/client-ufaflow-deployment
+
+    - name: show pods
+      run: kubectl get pod
