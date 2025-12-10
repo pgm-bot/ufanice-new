@@ -52,9 +52,9 @@ interface Partner {
 }
 
 const siteName = ref('คาสิโนออนไลน์ สมัครเล่นบาคาร่าออนไลน์ สล็อตออนไลน์')
-const siteDomain = ref('UFANANCE.COM')
+const siteDomain = ref('UFANICE.COM')
 const homeUrl = ref('/')
-const logoUrl = ref('https://ufanance12.com/wp-content/uploads/2022/07/logo-ufanance1.png')
+const logoUrl = ref('/img/logo/logo-1.png')
 const currentYear = new Date().getFullYear()
 
 const partners = ref<Partner[]>([

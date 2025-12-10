@@ -13,23 +13,24 @@
         </div>
 
         <!-- Credit Section -->
-        <section class="credit">
-            <div class="credit-box">
-                <div class="amount-box float-left">
-                    <small>ยอดเครดิตของคุณ</small>
-                    <p class="amount">{{ formatCurrency(userData.credit) }}</p>
-                </div>
+      <section class="credit">
+  <div class="credit-box">
+    <div class="amount-box float-left">
+      <small>ยอดเครดิตของคุณ</small>
+      <p class="amount">{{ formatCurrency(userData.credit) }}</p>
+    </div>
 
-                <div class="button-box float-left">
-                    <a href="/deposit" class="btn-block btn-gold">
-                        <i class="fas fa-wallet"></i> ฝากเงิน
-                    </a>
-                    <a href="/withdraw" class="btn-block btn-silver">
-                        <i class="fas fa-hand-holding-usd"></i> ถอนเงิน
-                    </a>
-                </div>
-            </div>
-        </section>
+    <div class="button-box float-left">
+      <!-- เปลี่ยนจาก <a href="/deposit"> เป็น button กดเปิด modal -->
+      <button type="button" class="btn-block btn-gold" @click="isDepositModalVisible = true">
+        <i class="fas fa-wallet"></i> ฝากเงิน
+      </button>
+      <a href="/withdraw" class="btn-block btn-silver">
+        <i class="fas fa-hand-holding-usd"></i> ถอนเงิน
+      </a>
+    </div>
+  </div>
+</section>
 
         <!-- Navigation Section -->
         <section class="navigation">
@@ -190,11 +191,30 @@
                 </table>
             </div>
         </section>
+        <!-- Modal ฝากเงิน -->
+<DepositMethodModal
+  :visible="isDepositModalVisible"
+  @close="isDepositModalVisible = false"
+  @select="handleDepositMethodSelect"
+/>
         <PromoDetailModal :visible="isPromoModalVisible" :promo-id="selectedPromoId" @close="closePromoModal" />
+        
     </div>
 </template>
 
 <script setup lang="ts">
+    const isDepositModalVisible = ref(false)
+    const router = useRouter()
+
+const handleDepositMethodSelect = (methodKey: string) => {
+  isDepositModalVisible.value = false
+
+  // ไปหน้า /deposit โดยส่ง method ไปเป็น query (หรือจะใช้ params ก็ได้)
+  router.push({
+    path: '/deposit',
+    query: { method: methodKey } // เช่น ?method=bank
+  })
+}
 interface UserData {
     memberId: string
     username: string
@@ -283,3 +303,14 @@ onMounted(() => {
     }
 })
 </script>
+<style  scoped>
+    .btn-gold{
+          font-size: 22px;
+    width: 100%;
+    float: left;
+    margin: 0px 0px 8px 0px;
+    padding: 4px 0px 4px 0px; 
+     font-family: 'ThaiSansLite', 'thaisanslite_r1', 'thaisanslite', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    }
+ 
+</style>

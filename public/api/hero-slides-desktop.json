@@ -1,16 +1,21 @@
 [
   {
-    "image": "https://ufanance12.com/wp-content/uploads/2023/06/HEAD.jpg",
+    "image": "/img/slides/slide-0.jpg",
     "link": "/article/promotions",
     "title": "Cover 2"
   },
   {
-    "image": "https://ufanance12.com/wp-content/uploads/2025/11/UFANANACE.png",
+    "image": "/img/slides/slide-1.jpg",
     "link": "/article/promotions",
     "title": "กิจกรรมประจำเดือน"
   },
   {
-    "image": "https://ufanance12.com/wp-content/uploads/2023/06/01.jpg",
+     "image": "/img/slides/slide-2.jpg",
+    "link": "/article/customer-reviews",
+    "title": "cover 3"
+  },
+    {
+     "image": "/img/slides/slide-3.jpg",
     "link": "/article/customer-reviews",
     "title": "cover 3"
   }

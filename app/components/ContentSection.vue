@@ -19,7 +19,7 @@
         <h3>
           <img
             class="wp-image-137 aligncenter x-box-main"
-            src="https://ufanance12.com/wp-content/uploads/2022/06/logo-ufanance.png"
+            src='/img/logo/logo-1.png'
             alt="UFANANCE Logo"
             width="668"
             height="247"

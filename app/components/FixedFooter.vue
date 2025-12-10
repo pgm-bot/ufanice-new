@@ -25,7 +25,7 @@
     </a>
 
     <!-- ฝากเงิน (แสดงเฉพาะเมื่อล็อกอินแล้ว) -->
-    <a v-show="isLoggedIn" class="readylogin" href="/deposit#ct_from">
+    <a v-show="isLoggedIn" class="readylogin" @click="isDepositModalVisible = true">
       <span class="link_ico ico_3">
         <i class="fas fa-wallet"></i>
       </span>
@@ -55,10 +55,16 @@
       </span>
       <strong>ติดต่อเรา</strong>
     </a>
+    <DepositMethodModal
+  :visible="isDepositModalVisible"
+  @close="isDepositModalVisible = false"
+  @select="handleDepositMethodSelect"
+/>
   </div>
 </template>
 
 <script setup lang="ts">
+      const isDepositModalVisible = ref(false)
 const isLoggedIn = ref(false)
 
 // Cookie Management Functions
@@ -94,6 +100,15 @@ onMounted(() => {
     clearInterval(interval)
   })
 })
+const router = useRouter()
+
+const handleDepositMethodSelect = (methodKey: 'bank' | 'qr' | 'wallet' | 'crypto') => {
+  isDepositModalVisible.value = false
+  router.push({
+    path: '/deposit',
+    query: { method: methodKey }   // /deposit?method=bank
+  })
+}
 </script>
 
 <style scoped>

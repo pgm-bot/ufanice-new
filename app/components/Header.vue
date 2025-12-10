@@ -76,7 +76,7 @@ const isMobileMenuOpen = ref(false)
 
 const siteName = ref('คาสิโนออนไลน์ สมัครเล่นบาคาร่าออนไลน์ สล็อตออนไลน์')
 const homeUrl = ref('/')
-const logoUrl = ref('https://ufanance12.com/wp-content/uploads/2022/07/logo-ufanance1.png')
+const logoUrl = ref('/img/logo/logo-1.png')
 
 // Helper function to check if menu item is active
 const isActive = (url: string): boolean => {

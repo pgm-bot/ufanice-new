@@ -34,16 +34,18 @@
         </div>
 
         <!-- Right: Video -->
-        <div class="tt_r btxr Parent zoomIn animated">
-          <iframe
-            :width="videoWidth"
-            :height="videoHeight"
-            :src="videoUrl"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
+       <div class="tt_r btxr Parent zoomIn animated">
+  <video
+    :width="videoWidth"
+    :height="videoHeight"
+    controls
+    preload="none"
+    style="width: 100%; border-radius: 8px;"
+  >
+    <source :src="videoUrl" type="video/mp4" />
+    วิดีโอไม่รองรับบนเบราว์เซอร์นี้
+  </video>
+</div>
       </div>
 
       <!-- Bottom Banner -->

@@ -6,7 +6,7 @@
       <div id="ct_from" class="tt_l tt_full title_page">
         <h1>ปั่นกงล้อลุ้นรับทอง 1 บาท ได้ทุกวัน ปั่นได้ทุกวันวันละครั้ง</h1>
       </div>
-      <div class="tt_l tt_full tt_content bg" style="background-color: black;">
+      <div class="tt_l tt_full tt_content bg" >
         <div class="thaitheme_read">
 
 
@@ -28,29 +28,7 @@
                   </div>
                 </div>
 
-                <div class="col-12 pl-0 pr-0 text-center">
-                  <div class="account-table table-content table-responsive" style="max-width:800px;margin:auto">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <td style="text-align: center" colspan="3" class="boxTd">รายการรับรางวัลล่าสุด</td>
-                        </tr>
-                        <tr>
-                          <td style="min-width:70px" class="boxTd">USER</td>
-                          <td style="min-width:50px" class="boxTd">จำนวน</td>
-                          <td style="min-width:170px" class="boxTd">วันที่</td>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr v-for="d in data" :key="d.id">
-                          <td>{{ d.username }}</td>
-                          <td>{{ d.money }}</td>
-                          <td>{{ d.transDate }}</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -158,7 +136,7 @@ export default {
       this.wheel.draw();
     }.bind(this);
 
-    firstImg.src = "/wheel_transparent.png";
+    firstImg.src = "/img/wheel/wheelOnly.png";
   },
   methods: {
     loadWinwheelScript() {
@@ -324,7 +302,7 @@ canvas {
 }
 
 .background_spin {
-  background-image: url('/wheel.png');
+  background-image: url('/img/wheel/wheel-background.png');
   background-size: cover;
   background-position: center 6px;
   background-repeat: no-repeat;

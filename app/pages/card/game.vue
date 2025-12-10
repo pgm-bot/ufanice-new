@@ -27,7 +27,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 0)" @click="pickCard(0)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/1.jpg" alt="Avatar" />
                         </div>
                         <div class="flip-card-back">
                           <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
@@ -39,7 +39,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 1)" @click="pickCard(1)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/2.jpg" alt="Avatar" />
                         </div>
                         <div class="flip-card-back">
                           <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
@@ -51,7 +51,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 2)" @click="pickCard(2)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/3.jpg" alt="Avatar" />
                         </div>
                         <div class="flip-card-back">
                           <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
@@ -63,7 +63,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 3)" @click="pickCard(3)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/4.jpg" alt="Avatar" />
                           <!-- <img v-if="result" :src="`/card_${result}.jpg`" alt="result" /> -->
                         </div>
                         <div class="flip-card-back">
@@ -76,7 +76,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 4)" @click="pickCard(4)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/5.jpg" alt="Avatar" />
                         </div>
                         <div class="flip-card-back">
                           <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />
@@ -88,7 +88,7 @@
                     <div class="flip-card" :class="getActiveClass(pick == 5)" @click="pickCard(5)">
                       <div class="flip-card-inner">
                         <div class="flip-card-front">
-                          <img src="/card.jpg" alt="Avatar" />
+                          <img src="/img/card/6.jpg" alt="Avatar" />
                         </div>
                         <div class="flip-card-back">
                           <img v-if="result" :src="`/card_${result}.jpg`" alt="result" />

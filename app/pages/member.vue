@@ -2,6 +2,7 @@
     <div class="page-template page-template-page page-template-login page-template-pagelogin-php page page-id-66">
         <HeadMobile></HeadMobile>
         <Header></Header>
+        <HeroSlider/>
         <FloatingGameMenu></FloatingGameMenu>
         <FloatingContactMenu></FloatingContactMenu>
         <MemberPage />

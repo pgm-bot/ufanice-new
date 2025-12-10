@@ -18,7 +18,7 @@
                             <div class="tt_l fr_login register_ft">
                                 <div class="fr_center">
                                     <div class="tt_l tt_full fr_h1">สมัครสมาชิกเพื่อเข้าเล่นคาสิโนออนไลน์ ที่เว็บไซต์
-                                        UFANANCE.COM</div>
+                                        UFANICE.COM</div>
 
                                     <form id="registerform" class="tt_l tt_full fr_re" @submit.prevent="handleRegister">
                                         <!-- Phone Number -->

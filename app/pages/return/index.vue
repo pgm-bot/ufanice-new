@@ -1,76 +1,88 @@
 <template>
-  <HeadMobile></HeadMobile>
-  <Header></Header>
-  <div class="wrapper">
-    <div class="tt_l tt_full tt_content bg">
-      <div class="tt_l tt_lcxxx">
-        <div class="tt_l tt_full title_page">
-          <h1>รับเครดิตเงินคืน</h1>
-        </div>
-        <div class="tt_l tt_full">
-          <div class="thaitheme_read" style="display: none;"></div>
+  <div>
+    <HeadMobile />
+    <Header />
 
-          <div class="tt_l tt_full">
-            <div class="tt_l tt_full fr_login fr_aff">
-              <div class="fr_center">
-                <div class="tt_l tt_full fr_h1">รับเงินคืนฟรี ทันทีทุกวัน {{ cashbackData.cashbackRate }}%</div>
-                <div class="tt_l tt_full fr_tx1">
-                  จำนวนเงินคืน : <span class="amount_return">{{ formatCurrency(cashbackData.totalAmount) }}</span> บาท
-                </div>
+    <!-- พื้นหลังขาวครอบทั้งหมด -->
+    <div class="cashback-wrapper">
 
-                <div class="text-center">
-                  <p class="tt_l tt_full fr_tx1">
-                    <b class="tt_l tt_full fr_tx1">
-                      ยอดเงินจะอัพเดทอัตโนมัติ เวลา<span style="color: #dc3545"> {{ cashbackData.lastUpdateTime }}น.</span> ของทุกวัน
-                    </b>
-                    <br /><br />
-                  </p>
-                </div>
+      <div class="cashback-page">
+        <!-- กล่องใหญ่ด้านบน -->
+        <section class="cashback-top-card">
+          <h2 class="title">
+            รับเงินคืนฟรี ทันทีทุกวัน 
+            <span class="rate">{{ cashbackData.cashbackRate }}%</span>
+          </h2>
 
-                <div class="text-center">
-                  <p class="tt_l tt_full fr_tx1">
-                    <b class="tt_l tt_full fr_tx1">
-                      รับเงินคืน <span style="color: #dc3545">{{ cashbackData.cashbackRate }}%</span> ฟรี ทุกยอดการแทง
-                    </b>
-
-                    <strong class="thick"><u>สุดยอดโปรโมชั่น รับเงินคืนฟรี ทันทีทุกวัน ทั้งวัน ไม่อั้น ไม่ติดเทิร์น</u></strong>
-
-                    ง่ายๆ เพียงเดิมพัน ออนไลน์
-                    <b style="font-size: 35px;">
-                      รับเงินคืน <span style="color: red; font-size: 35px;">{{ cashbackData.cashbackRate }}%</span> ทันที
-                    </b>
-                    ยิ่งเล่นยิ่งได้ ได้แบบฟรีๆ ไม่มีข้อแม้ โดยคำนวนจาก ยอดเดิมพันของท่าน ที่นี่ที่เดียว ที่ใจถึงให้ท่านได้
-                    <br />
-                  </p>
-                </div>
-
-                <a
-                  class="tt_l tt_ful fr_submit_bk"
-                  href="javascript:void(0);"
-                  @click="transferToCredit"
-                  :class="{ disabled: !canTransfer }">
-                  โอนเงินเข้าเครดิต
-                </a>
-
-                <div class="tt_l tt_full fr_tx1">
-                  <u>*ยอดขั้นต่ำ {{ cashbackData.minimumAmount }} บาท จึงจะโอนเข้าเครดิตได้</u>
-                </div>
-
-                <img src="/ads/03.jpg" style="margin-top: 5px; padding-top: 5px; width: 100%;" />
-              </div>
-            </div>
+          <div class="row-amount">
+            <span>จำนวนเงินคืน :</span>
+            <span class="amount">{{ formatCurrency(cashbackData.totalAmount) }} บาท</span>
           </div>
-        </div>
+
+          <p class="update-time">
+            ยอดเงินจะอัพเดทอัตโนมัติ เวลา 
+            <span class="red">{{ cashbackData.lastUpdateTime }} น.</span> ของทุกวัน
+          </p>
+
+          <p class="detail-text">
+            รับเงินคืน <span class="rate">{{ cashbackData.cashbackRate }}%</span> ฟรี ทุกยอดการแทง  
+            <br />
+            <strong class="u">สุดยอดโปรโมชั่น รับเงินคืนฟรี ทั้งวัน ไม่อั้น ไม่ติดเทิร์น</strong>
+            <br />
+            ง่าย ๆ เพียงเดิมพันออนไลน์ ยิ่งเล่นยิ่งได้ ได้แบบฟรี ๆ ไม่มีข้อแม้
+          </p>
+
+          <button
+            class="btn-transfer"
+            :class="{ disabled: !canTransfer }"
+            @click="transferToCredit"
+          >
+            โอนเงินเข้าเครดิต
+          </button>
+
+          <p class="note">
+            * ยอดขั้นต่ำ {{ cashbackData.minimumAmount }} บาท จึงจะโอนเข้าเครดิตได้
+          </p>
+        </section>
+
+        <!-- รูปภาพใหญ่ -->
+        <section class="cashback-img-wrap">
+          <img src="/img/allpage/cashback.jpg" class="cashback-img" />
+        </section>
+
+        <!-- รายละเอียดล่าง -->
+        <section class="cashback-description">
+          <h2 class="desc-title">** การคำนวนรายได้ที่ท่านจะได้รับ</h2>
+
+          <p>
+            เล่นบาคาร่าสด<br>
+            แทง Player 1,000,000 บาท → มียอดเดิมพัน 1,000,000 บาท
+          </p>
+
+          <p>
+            แทง Player อีกครั้ง 1,000,000 บาท ผล Banker ชนะ → มียอดเดิมพัน 1,000,000 บาท  
+            <br>รวมทั้งหมด = <strong>2,000,000 บาท</strong>
+          </p>
+
+          <p>
+            ท่านจะได้รับเงินคืน <strong>0.3%</strong> ของยอดเดิมพัน 2,000,000  
+            <br>รายได้ที่จะได้รับคือ <strong>6,000 บาท</strong> ไม่ว่าจะแพ้หรือชนะ ได้คืนฟรีทันที!
+          </p>
+
+          <p class="desc-note">
+            หมายเหตุ : ถอนรายได้ได้เมื่อมากกว่า <strong>15 บาทขึ้นไป</strong>
+          </p>
+        </section>
       </div>
     </div>
+
+    <Footer />
+    <FixedFooter />
   </div>
-  <Footer></Footer>
-  <FixedFooter></FixedFooter>
 </template>
 
 <script setup lang="ts">
 import Swal from 'sweetalert2'
-import 'sweetalert2/dist/sweetalert2.min.css'
 
 interface CashbackData {
   totalAmount: number
@@ -89,65 +101,130 @@ const cashbackData = ref<CashbackData>({
 })
 
 const canTransfer = computed(() => {
-  return cashbackData.value.canWithdraw && cashbackData.value.totalAmount >= cashbackData.value.minimumAmount
+  return cashbackData.value.totalAmount >= cashbackData.value.minimumAmount
 })
 
-const formatCurrency = (amount: number) => {
-  return amount.toFixed(2)
-}
+const formatCurrency = (amount: number) =>
+  amount.toLocaleString('th-TH', { minimumFractionDigits: 2 })
 
-const loadCashbackData = async () => {
-  try {
-    const response = await fetch('/api/cashback/summary.json')
-    const result = await response.json()
-    if (result.status === 200 && result.data) {
-      cashbackData.value = {
-        totalAmount: result.data.totalAmount,
-        minimumAmount: result.data.minimumAmount,
-        cashbackRate: result.data.cashbackRate,
-        lastUpdateTime: result.data.lastUpdateTime,
-        canWithdraw: result.data.canWithdraw
-      }
-    }
-  } catch (error) {
-    console.error('Failed to load cashback data:', error)
-  }
-}
-
-const transferToCredit = async () => {
-  if (cashbackData.value.totalAmount < cashbackData.value.minimumAmount) {
-    Swal.fire({
-      icon: 'error',
-      title: 'ทำรายการไม่สำเร็จ',
-      text: `ท่านมียอดรายได้ไม่ถึง ${cashbackData.value.minimumAmount} บาท โปรดสะสมให้ครบก่อนทำรายการ`,
-    })
+const transferToCredit = () => {
+  if (!canTransfer.value) {
+    Swal.fire('ผิดพลาด', 'ยอดยังไม่ถึงขั้นต่ำ', 'error')
     return
   }
 
-  Swal.fire({
-    title: 'กำลังทำรายการ',
-    html: 'กำลังทำรายการ กรุณารอสักครู่',
-    allowOutsideClick: false,
-    didOpen: () => {
-      Swal.showLoading()
-      // Simulate API call
-      setTimeout(() => {
-        Swal.fire({
-          icon: 'success',
-          title: 'ทำรายการสำเร็จ',
-          text: 'ระบบได้เพิ่มเครดิตให้ท่านแล้ว!',
-        }).then(() => {
-          // Reload data
-          loadCashbackData()
-        })
-      }, 2000)
-    }
-  })
+  Swal.fire('สำเร็จ', 'ระบบได้เพิ่มเครดิตให้ท่านแล้ว!', 'success')
+}
+</script>
+
+<style scoped>
+/* พื้นหลังขาวเต็มหน้า */
+.cashback-wrapper {
+  background: #ffffff;
+  padding: 25px 0 50px;
+  width: 100%;
+  max-width: 980px;
+  margin-inline: auto;
+  margin-bottom: 40px;
 }
 
-onMounted(() => {
-  if (process.client) {
-    loadCashbackData()
-  }
-})
-</script>
+/* ความกว้างของเนื้อหา */
+.cashback-page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+  font-family: 'thaisanslite_r1', sans-serif;
+}
+
+/* กล่องบน */
+.cashback-top-card {
+  background: #fffbea;
+  border: 1px solid #ffda6a;
+  padding: 26px 22px;
+  border-radius: 12px;
+  margin-bottom: 22px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.rate { color: #ff7b00; font-weight: 900; }
+
+.row-amount {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.update-time { font-size: 19px; }
+.red { color: #d80000; }
+
+.detail-text {
+  font-size: 21px;
+  line-height: 1.7;
+  margin: 16px 0;
+}
+
+.u { text-decoration: underline; }
+
+.btn-transfer {
+  width: 100%;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-transfer.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.note {
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+/* รูป */
+.cashback-img-wrap { margin-bottom: 20px; }
+
+.cashback-img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+/* รายละเอียด */
+.cashback-description {
+  font-size: 21px;
+  line-height: 1.8;
+}
+
+.desc-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.desc-note {
+  margin-top: 14px;
+  font-size: 19px;
+  color: #444;
+}
+
+/* มือถือ */
+@media (max-width: 600px) {
+  .title { font-size: 24px; }
+  .detail-text { font-size: 18px; }
+  .btn-transfer { font-size: 18px; padding: 12px; }
+}
+</style>
