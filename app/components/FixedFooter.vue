@@ -1,15 +1,15 @@
 <template>
   <div class="fix_footer" aria-hidden="true">
     <!-- เข้าสู่ระบบ / ข้อมูลส่วนตัว -->
-    <a :href="isLoggedIn ? '/member#ct_from' : '/login'">
+    <a :href="loggedIn ? '/member#ct_from' : '/login'">
       <span class="link_ico ico_1">
         <i class="fas fa-sign-in-alt"></i>
       </span>
-      <strong class="reg1">{{ isLoggedIn ? 'ข้อมูลส่วนตัว' : 'เข้าสู่ระบบ' }}</strong>
+      <strong class="reg1">{{ loggedIn ? 'ข้อมูลส่วนตัว' : 'เข้าสู่ระบบ' }}</strong>
     </a>
 
     <!-- สมัครสมาชิก (แสดงเฉพาะเมื่อยังไม่ล็อกอิน) -->
-    <a v-show="!isLoggedIn" class="nologin" href="/register#ct_from">
+    <a v-show="!loggedIn" class="nologin" href="/register#ct_from">
       <span class="link_ico ico_2">
         <i class="fas fa-user-plus"></i>
       </span>
@@ -17,7 +17,7 @@
     </a>
 
     <!-- โปรโมชั่น (แสดงเฉพาะเมื่อยังไม่ล็อกอิน) -->
-    <a v-show="!isLoggedIn" class="nologin" href="/article/promotions#ct_from">
+    <a v-show="!loggedIn" class="nologin" href="/article/promotions#ct_from">
       <span class="link_ico ico_2">
         <i class="fas fa-bullhorn"></i>
       </span>
@@ -25,7 +25,7 @@
     </a>
 
     <!-- ฝากเงิน (แสดงเฉพาะเมื่อล็อกอินแล้ว) -->
-    <a v-show="isLoggedIn" class="readylogin" @click="isDepositModalVisible = true">
+    <a v-show="loggedIn" class="readylogin" @click="isDepositModalVisible = true">
       <span class="link_ico ico_3">
         <i class="fas fa-wallet"></i>
       </span>
@@ -33,7 +33,7 @@
     </a>
 
     <!-- ถอนเงิน (แสดงเฉพาะเมื่อล็อกอินแล้ว) -->
-    <a v-show="isLoggedIn" class="readylogin" href="/withdrawal#ct_from">
+    <a v-show="loggedIn" class="readylogin" href="/withdrawal#ct_from">
       <span class="link_ico ico_4">
         <i class="fas fa-hand-holding-usd"></i>
       </span>
@@ -64,42 +64,8 @@
 </template>
 
 <script setup lang="ts">
-      const isDepositModalVisible = ref(false)
-const isLoggedIn = ref(false)
-
-// Cookie Management Functions
-const getCookie = (name: string): string | null => {
-  if (!process.client) return null
-  const nameEQ = name + '='
-  const ca = document.cookie.split(';')
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i]
-    while (c.charAt(0) === ' ') c = c.substring(1, c.length)
-    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
-  }
-  return null
-}
-
-// Check login status
-const checkLoginStatus = () => {
-  if (process.client) {
-    const userCookie = getCookie('users')
-    isLoggedIn.value = !!userCookie
-  }
-}
-
-// Check on mount
-onMounted(() => {
-  checkLoginStatus()
-
-  // Check periodically for changes in login status
-  const interval = setInterval(checkLoginStatus, 1000)
-
-  // Cleanup interval on unmount
-  onBeforeUnmount(() => {
-    clearInterval(interval)
-  })
-})
+const { user, clear: clearSession, loggedIn, session, openInPopup } = useUserSession()
+const isDepositModalVisible = ref(false)
 const router = useRouter()
 
 const handleDepositMethodSelect = (methodKey: 'bank' | 'qr' | 'wallet' | 'crypto') => {

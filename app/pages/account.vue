@@ -7,11 +7,11 @@
         <FloatingContactMenu></FloatingContactMenu>
 
         <!-- แสดง TransactionHistory เมื่อมี query parameter h=h -->
-        <TransactionHistory v-if="isLoggedIn && showHistory" />
+        <TransactionHistory v-if="loggedIn && showHistory" />
 
         <!-- แสดง AccountPage เมื่อไม่มี query parameter -->
         <AccountPage
-            v-else-if="isLoggedIn"
+            v-else-if="loggedIn"
             :userData="accountData"
             @updatePassword="handleUpdatePassword"
         />
@@ -61,9 +61,6 @@ const showHistory = computed(() => route.query.h === 'h')
 
 const { user, loggedIn } = useUserSession()
 const { showSuccess, showError } = useSweetAlert()
-
-// เช็คสถานะ login
-const isLoggedIn = computed(() => loggedIn.value)
 
 // แปลง user session เป็น UserData format
 const userData = computed<UserData>(() => {
