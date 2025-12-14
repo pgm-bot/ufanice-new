@@ -33,7 +33,7 @@ const article = computed<Article | undefined>(() => articlesData.find(a => a.slu
 useHead({
   title: article.value?.title || 'บทความ',
   meta: [
-    { name: 'description', content: article.value?.title || 'อ่านบทความจาก UFANANCE' }
+    { name: 'description', content: article.value?.title || 'อ่านบทความจาก UFANICE' }
   ]
 })
 </script>

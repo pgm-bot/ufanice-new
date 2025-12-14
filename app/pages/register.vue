@@ -216,9 +216,9 @@ const handleRegister = () => {
 }
 
 useHead({
-    title: 'สมัครสมาชิก - UFANANCE',
+    title: 'สมัครสมาชิก - UFANICE',
     meta: [
-        { name: 'description', content: 'สมัครสมาชิกเพื่อเข้าเล่นคาสิโนออนไลน์ที่ UFANANCE' }
+        { name: 'description', content: 'สมัครสมาชิกเพื่อเข้าเล่นคาสิโนออนไลน์ที่ UFANICE' }
     ],
     link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }

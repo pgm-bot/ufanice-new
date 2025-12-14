@@ -14,9 +14,9 @@
 
 <script setup lang="ts">
 useHead({
-    title: 'สมาชิก - UFANANCE',
+    title: 'สมาชิก - UFANICE',
     meta: [
-        { name: 'description', content: 'หน้าข้อมูลสมาชิก UFANANCE คาสิโนออนไลน์ บาคาร่า สล็อต แทงบอล' }
+        { name: 'description', content: 'หน้าข้อมูลสมาชิก UFANICE คาสิโนออนไลน์ บาคาร่า สล็อต แทงบอล' }
     ],
     link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }

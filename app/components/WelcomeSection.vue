@@ -7,7 +7,7 @@
         target="_blank"
         :href="topBannerLink"
       >
-        <img :src="topBannerImage" alt="UFANANCE Top Banner">
+        <img :src="topBannerImage" alt="UFANICE Top Banner">
       </a>
 
       <!-- Content + Video Section -->
@@ -16,10 +16,10 @@
         <div class="tt_l btxl">
           <div class="tt_l tt_full tt_txt_seo2x Parent zoomIn animated">
             <h3>
-              <span style="color: #f3c31a;">ยินดีต้อนรับเข้าสู่เว็บไซต์ คาสิโนออนไลน์ UFANANCE</span>
+              <span style="color: #f3c31a;">ยินดีต้อนรับเข้าสู่เว็บไซต์ คาสิโนออนไลน์ UFANICE</span>
             </h3>
             <p>
-              UFANANCE เป็นเว็บตรงจากเครือ UFA BET ซึ่งเป็นผู้ให้บริการพนันออนไลน์ที่ดีที่สุด มาตรฐานระดับสากล
+              UFANICE เป็นเว็บตรงจากเครือ UFA BET ซึ่งเป็นผู้ให้บริการพนันออนไลน์ที่ดีที่สุด มาตรฐานระดับสากล
               มีเกมส์ให้เลือกเดิมพันหลากหลายไม่ว่าจะเป็น แทงบอลออนไลน์ บอลเดี่ยว บอลสเต็ป เกมส์บาคาร่าจากค่ายดังๆ
               เกมส์สล็อตที่แตกง่ายมากๆ และหวยออนไลน์ เช่น หวยรัฐบาล หวยยี่กี่ หวยหุ้น และอื่นๆอีกมากมายไว้ให้บริการ
               โดยระบบเว็บเราเป็นระบบที่ฝาก-ถอน AUTO ภายใน 10 วินาที ทำให้ลูกค้าไม่ต้องรอนาน
@@ -54,7 +54,7 @@
         target="_blank"
         :href="bottomBannerLink"
       >
-        <img :src="bottomBannerImage" alt="UFANANCE Bottom Banner">
+        <img :src="bottomBannerImage" alt="UFANICE Bottom Banner">
       </a>
     </div>
   </div>
@@ -81,7 +81,7 @@ const props = withDefaults(defineProps<Props>(), {
   videoUrl: 'https://cdend.com/c2FnYW1lc2FnYW1lc2FnYW1lc2FnYW1lc2FnYW1lc2FnYW1l/ufanance.mp4',
   videoWidth: 560,
   videoHeight: 280,
-  lineId: '@UFANANCEV4',
+  lineId: '@UFANICEV4',
   lineUrl: 'https://line.me/ti/p/~@ufanancev4'
 })
 </script>

@@ -195,9 +195,9 @@ onMounted(async () => {
 
 // Set page metadata
 useHead({
-  title: 'อันดับนักแนะนำเพื่อน - UFANANCE',
+  title: 'อันดับนักแนะนำเพื่อน - UFANICE',
   meta: [
-    { name: 'description', content: 'ประกาศรายชื่อนักแนะนำเพื่อนประจำเดือน รับรางวัลทองคำและเครดิต UFANANCE' }
+    { name: 'description', content: 'ประกาศรายชื่อนักแนะนำเพื่อนประจำเดือน รับรางวัลทองคำและเครดิต UFANICE' }
   ]
 })
 </script>

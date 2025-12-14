@@ -57,7 +57,7 @@ const defaultArticles = articlesData.slice(0, 4).map(article => ({
   image: article.coverImage || FALLBACK_IMAGE,
   link: `/article/${article.slug}`,
   title: article.title,
-  excerpt: article.excerpt || 'อ่านบทความจาก UFANANCE'
+  excerpt: article.excerpt || 'อ่านบทความจาก UFANICE'
 }))
 
 const props = defineProps<Props>()

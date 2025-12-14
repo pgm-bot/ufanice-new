@@ -90,9 +90,9 @@ onMounted(async () => {
 
 // Set page metadata
 useHead({
-  title: 'หน้าหลัก - UFANANCE คาสิโนออนไลน์',
+  title: 'หน้าหลัก - UFANICE คาสิโนออนไลน์',
   meta: [
-    { name: 'description', content: 'UFANANCE เว็บพนันบอลออนไลน์ แทงบอล UFABET อันดับ 1' }
+    { name: 'description', content: 'UFANICE เว็บพนันบอลออนไลน์ แทงบอล UFABET อันดับ 1' }
   ]
 })
 </script>

@@ -70,9 +70,9 @@ onMounted(async () => {
 })
 
 useHead({
-    title: 'ฝากเงิน - UFANANCE',
+    title: 'ฝากเงิน - UFANICE',
     meta: [
-        { name: 'description', content: 'ฝากเงินเข้าระบบ UFANANCE ง่ายๆ ด้วยระบบ QR Code และโอนผ่านธนาคาร' }
+        { name: 'description', content: 'ฝากเงินเข้าระบบ UFANICE ง่ายๆ ด้วยระบบ QR Code และโอนผ่านธนาคาร' }
     ],
     link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }

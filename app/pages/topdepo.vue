@@ -215,9 +215,9 @@ onMounted(async () => {
 
 // Set page metadata
 useHead({
-  title: 'อันดับยอดรับเงินคืนสูงสุด - UFANANCE',
+  title: 'อันดับยอดรับเงินคืนสูงสุด - UFANICE',
   meta: [
-    { name: 'description', content: 'ประกาศรายชื่อผู้ที่ทำยอดรับเงินคืนเยอะสุดประจำเดือน รับรางวัลทองคำและเครดิต UFANANCE' }
+    { name: 'description', content: 'ประกาศรายชื่อผู้ที่ทำยอดรับเงินคืนเยอะสุดประจำเดือน รับรางวัลทองคำและเครดิต UFANICE' }
   ]
 })
 </script>

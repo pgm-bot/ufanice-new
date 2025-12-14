@@ -145,15 +145,15 @@
 <script setup lang="ts">
 // Set page metadata
 useHead({
-  title: 'รางวัลประจำเดือน - UFANANCE',
+  title: 'รางวัลประจำเดือน - UFANICE',
   meta: [
     {
       name: 'description',
-      content: 'แจกรางวัลประจำเดือน เงินสดและทองคำมูลค่านับล้าน สำหรับลูกค้าที่มียอดสูงสุด UFANANCE'
+      content: 'แจกรางวัลประจำเดือน เงินสดและทองคำมูลค่านับล้าน สำหรับลูกค้าที่มียอดสูงสุด UFANICE'
     },
     {
       property: 'og:title',
-      content: 'รางวัลประจำเดือน - UFANANCE'
+      content: 'รางวัลประจำเดือน - UFANICE'
     },
     {
       property: 'og:description',

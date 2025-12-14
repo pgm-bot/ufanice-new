@@ -8,9 +8,9 @@
 <script setup lang="ts">
 // Set page metadata
 useHead({
-  title: 'คาสิโนออนไลน์ สมัครเล่นบาคาร่าออนไลน์ สล็อตออนไลน์ - UFANANCE',
+  title: 'คาสิโนออนไลน์ สมัครเล่นบาคาร่าออนไลน์ สล็อตออนไลน์ - UFANICE',
   meta: [
-    { name: 'description', content: 'UFANANCE คาสิโนออนไลน์' },
+    { name: 'description', content: 'UFANICE คาสิโนออนไลน์' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'theme-color', content: '#0b0e11' }
   ],

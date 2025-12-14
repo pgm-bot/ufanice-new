@@ -100,7 +100,7 @@
                         <input type="hidden" name="password" class="password_" :value="userData.gamePassword">
                         <input type="hidden" name="__EVENTTARGET" value="btnSignIn">
                         <button class="tt_l tt_full fr_submit_bk ufa_link" type="submit">
-                            ทางเข้าเล่น UFANANCE
+                            ทางเข้าเล่น UFANICE
                         </button>
                     </form>
                 </div>

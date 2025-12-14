@@ -16,15 +16,15 @@ export interface Article {
 export const articles: Article[] = [
 {
     slug: 'casino-online',
-    title: 'UFANANCE คาสิโนออนไลน์ โบนัส 50 %',
+    title: 'UFANICE คาสิโนออนไลน์ โบนัส 50 %',
     publishedDate: '2022-09-14',
     author: 'headeditor',
     content: `
-      <h1 style="text-align: center;"><strong>UFANANCE </strong><strong>ครบจบ </strong><strong>คาสิโนออนไลน์ คาสิโนสด บาคาร่า&nbsp;&nbsp;</strong></h1>
+      <h1 style="text-align: center;"><strong>UFANICE </strong><strong>ครบจบ </strong><strong>คาสิโนออนไลน์ คาสิโนสด บาคาร่า&nbsp;&nbsp;</strong></h1>
       <p><a href="/login"><img fetchpriority="high" decoding="async" class="wp-image-746 size-full aligncenter" src="https://ufanance12.com/wp-content/uploads/2022/09/messageImage_1663164560401-1.jpg" alt="" width="1404" height="880"></a></p>
-      <p>ศูนย์รวมคาสิโนออนไลน์ <span style="color: #ffcc00;"><span style="text-decoration: underline;"><strong>UFANANCE</strong></span> <span style="color: #000000;">มั่นคงปลอดภัย </span></span><span style="color: #ffcc00;"><span style="color: #000000;">&nbsp;มั่นใจ ฝากถอนไว ด้วย<span style="color: #00ff00;">ระบบAI</span> ที่ล้ำสมัย มีความเสถียรและแม่นยำ <strong>ไม่ต้องง้อแอดมิน</strong> <strong>สามารถสั่งงานได้ด้วยตัวเอง ผ่านระบบAUTO AI ถอนเพียง 10วิ</strong> เท่านี้สามารถเล่น <span style="text-decoration: underline; color: #ff0000;">คาสิโนออนไลน์</span> </span></span><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">บาคาร่า</span>&nbsp;</span> <span style="text-decoration: underline; color: #ff0000;">รูเล็ต เสือมังกร ป็อกเด้ง</span> ได้จากทุกที่ทั่วโลกที่มี Internet สะดวก สบาย เล่นได้ทุกที่ ทุกเวลา</span></span></p>
+      <p>ศูนย์รวมคาสิโนออนไลน์ <span style="color: #ffcc00;"><span style="text-decoration: underline;"><strong>UFANICE</strong></span> <span style="color: #000000;">มั่นคงปลอดภัย </span></span><span style="color: #ffcc00;"><span style="color: #000000;">&nbsp;มั่นใจ ฝากถอนไว ด้วย<span style="color: #00ff00;">ระบบAI</span> ที่ล้ำสมัย มีความเสถียรและแม่นยำ <strong>ไม่ต้องง้อแอดมิน</strong> <strong>สามารถสั่งงานได้ด้วยตัวเอง ผ่านระบบAUTO AI ถอนเพียง 10วิ</strong> เท่านี้สามารถเล่น <span style="text-decoration: underline; color: #ff0000;">คาสิโนออนไลน์</span> </span></span><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">บาคาร่า</span>&nbsp;</span> <span style="text-decoration: underline; color: #ff0000;">รูเล็ต เสือมังกร ป็อกเด้ง</span> ได้จากทุกที่ทั่วโลกที่มี Internet สะดวก สบาย เล่นได้ทุกที่ ทุกเวลา</span></span></p>
       <p><img decoding="async" class="wp-image-1401 size-full aligncenter" src="https://ufanance12.com/wp-content/uploads/2023/06/728x200.gif" alt="" width="728" height="200"></p>
-      <p><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ffcc00; text-decoration: underline;"> UFANANCE.COM</span></span> เป็นเว็บไซต์ที่มั่นคง ปลอดภัย และได้รับการยอมรับจากสากลขึ้นชื่อเรื่องการเดิมพันบอลและคาสิโน ไม่มีใครไม่รู้จัก UFABET&nbsp; เว็บเรา(ufanance.com) ยิงตรงจาก UFABET ไม่ผ่านตัวแทน ทำให้ไม่มีการล็อคยูสหรือล็อคไพ่ ระบบคาสิโนออนไลน์จากแบรนด์ดัง มาตราฐานระดับสากล เช่น <span style="color: #00ff00;">SA GAMING</span>, <span style="color: #ff00ff;">SEXY BACCARAT, <span style="color: #ffff99;">eBET</span></span>, <span style="color: #808080;">WORLD ENTERTAINMENT, <span style="color: #333399;">EVOLUTION CASINO, <span style="color: #993300;">VENUS CASINO, <span style="color: #0000ff;">BIG GAMING CASINO </span></span></span></span><span style="text-decoration: underline;">บาคาร่าออนไลน์</span> <span style="text-decoration: underline;">คาสิโนสด</span> <span style="text-decoration: underline;">แบล็คแจ็ค</span> <span style="text-decoration: underline;">ป็อกเด้ง</span> <span style="text-decoration: underline;">เสือมังกร</span> <span style="text-decoration: underline;">กำถั่ว </span></span></span><span style="color: #ffcc00;"><span style="color: #000000;">และอื่นๆอีกมากมาย ที่เราคัดสรรมาอย่างดี เพื่อให้ลูกค้าได้เล่นอย่างมีความสุข ไม่สะดุด หรือเด้งหลุด</span></span></p>
+      <p><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ffcc00; text-decoration: underline;"> UFANICE.COM</span></span> เป็นเว็บไซต์ที่มั่นคง ปลอดภัย และได้รับการยอมรับจากสากลขึ้นชื่อเรื่องการเดิมพันบอลและคาสิโน ไม่มีใครไม่รู้จัก UFABET&nbsp; เว็บเรา(ufanance.com) ยิงตรงจาก UFABET ไม่ผ่านตัวแทน ทำให้ไม่มีการล็อคยูสหรือล็อคไพ่ ระบบคาสิโนออนไลน์จากแบรนด์ดัง มาตราฐานระดับสากล เช่น <span style="color: #00ff00;">SA GAMING</span>, <span style="color: #ff00ff;">SEXY BACCARAT, <span style="color: #ffff99;">eBET</span></span>, <span style="color: #808080;">WORLD ENTERTAINMENT, <span style="color: #333399;">EVOLUTION CASINO, <span style="color: #993300;">VENUS CASINO, <span style="color: #0000ff;">BIG GAMING CASINO </span></span></span></span><span style="text-decoration: underline;">บาคาร่าออนไลน์</span> <span style="text-decoration: underline;">คาสิโนสด</span> <span style="text-decoration: underline;">แบล็คแจ็ค</span> <span style="text-decoration: underline;">ป็อกเด้ง</span> <span style="text-decoration: underline;">เสือมังกร</span> <span style="text-decoration: underline;">กำถั่ว </span></span></span><span style="color: #ffcc00;"><span style="color: #000000;">และอื่นๆอีกมากมาย ที่เราคัดสรรมาอย่างดี เพื่อให้ลูกค้าได้เล่นอย่างมีความสุข ไม่สะดุด หรือเด้งหลุด</span></span></p>
 
       <h3 style="text-align: center;"><span style="color: #ffcc00;"><span style="color: #000000;"><span style="color: #ff00ff;">SEXY BACCARAT</span></span></span></h3>
       <p><img decoding="async" class="size-full wp-image-748 aligncenter" src="https://ufanance12.com/wp-content/uploads/2022/09/messageImage_1663181094040-3.jpg" alt="" width="1382" height="755"></p>
@@ -164,7 +164,7 @@ export const articles: Article[] = [
     author: 'headeditor',
     content: `
       <h2><a href="/"><img fetchpriority="high" decoding="async" class="aligncenter wp-image-2422 size-full" src="https://ufanance12.com/wp-content/uploads/2025/09/photo_2025-09-14_22-54-34-2.jpg" alt="" width="680" height="200"></a></h2>
-      <h2 style="text-align: center;">สำหรับท่านที่เข้าเว็บ <span style="color: #ff9900;">UFANANCE </span>ไม่ได้ เรามีวิธีแก้ไขปัญหาที่แสนง่ายมานำเสนอ</h2>
+      <h2 style="text-align: center;">สำหรับท่านที่เข้าเว็บ <span style="color: #ff9900;">UFANICE </span>ไม่ได้ เรามีวิธีแก้ไขปัญหาที่แสนง่ายมานำเสนอ</h2>
       <h4>ที่ผ่านมาหลายท่านคงประสบปัญหา เข้าเว็บไม่ได้ เนื่องจากที่ผ่านมาทางเครือข่ายอินเทอร์เน็ตได้ทำการบล็อค URL<br>
       ของเราอยู่บ่อยครั้ง ท่านจึงไม่สามารถเข้าเว็บได้ และเราต้องเปลี่ยน URL อยู่บ่อยๆ เราจึงขอเสนอวิธีที่ท่านจะเข้าใช้งานเว็บได้ต่อให้ใช้ URL เดิม คือการเข้าผ่าน VPN เพียงทำตาม 3 ขั้นตอนแสนง่ายที่เราแจ้งดังนี้</h4>
       <hr>
@@ -181,7 +181,7 @@ export const articles: Article[] = [
       <hr>
       <h4><strong>3. จากนั้นเปิด Connected ได้เลย</strong></h4>
       <p><a href="/wp-content/uploads/2025/09/photo_2025-09-15_18-39-43.jpg"><img loading="lazy" decoding="async" class="aligncenter wp-image-2434" src="https://ufanance12.com/wp-content/uploads/2025/09/photo_2025-09-15_18-39-43.jpg" alt="" width="272" height="382"></a></p>
-      <p>เพียงเท่านี้ ท่านสามารถเข้าใช้งานเว็บไซต์ <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANANCE</a></strong></span> ได้อย่างไม่มีสะดุดและไม่ติด Block จากค่ายอินเทอร์เน็ตแล้ว</p>
+      <p>เพียงเท่านี้ ท่านสามารถเข้าใช้งานเว็บไซต์ <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANICE</a></strong></span> ได้อย่างไม่มีสะดุดและไม่ติด Block จากค่ายอินเทอร์เน็ตแล้ว</p>
       <hr>
       <h2>สำหรับท่านที่ใช้งานผ่านคอมพิวเตอร์<br>
       ทั้งระบบ <a href="https://1111-releases.cloudflareclient.com/win/latest"><span style="color: #ff6600;">Windows PC</span></a> หรือ <a href="https://1111-releases.cloudflareclient.com/mac/latest"><span style="color: #ff6600;">macOS</span></a><br>
@@ -199,9 +199,9 @@ export const articles: Article[] = [
       1.1.1.1 ONLY<br>
       กด Connected เพื่อใช้งาน</h4>
       <p><a href="https://ufanance12.com/wp-content/uploads/2025/09/photo_2568-09-28-1.00.47 PM.jpeg"><img loading="lazy" decoding="async" class="aligncenter wp-image-2441 size-full" src="https://ufanance12.com/wp-content/uploads/2025/09/photo_2568-09-28-1.00.47 PM.jpeg" alt="" width="347" height="457"></a></p>
-      <p>เพียงเท่านี้ทุกคนก็สามารถเข้า <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANANCE</a> </strong></span> ได้ด้วยการเข้าผ่าน VPN ระบบจะนำพามาที่ URL ล่าสุด โดยท่านไม่จำเป็นต้องเปลี่ยน URL</p>
+      <p>เพียงเท่านี้ทุกคนก็สามารถเข้า <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANICE</a> </strong></span> ได้ด้วยการเข้าผ่าน VPN ระบบจะนำพามาที่ URL ล่าสุด โดยท่านไม่จำเป็นต้องเปลี่ยน URL</p>
       <hr>
-      <p>✓&nbsp;<strong>สรุป&nbsp;</strong>หากคุณครอบ VPN เรียบร้อยแล้วไม่จำเป็นต้องหาลิงค์ทางเข้าใหม่เลย แค่เข้า <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANANCE</a></strong></span>&nbsp;เข้าตรงเลย ระบบจะพาไปลิงค์ล่าสุดเอง หมดปัญหาเรื่องหาลิงค์ทางเข้าใหม่อีกต่อไป</p>
+      <p>✓&nbsp;<strong>สรุป&nbsp;</strong>หากคุณครอบ VPN เรียบร้อยแล้วไม่จำเป็นต้องหาลิงค์ทางเข้าใหม่เลย แค่เข้า <span style="color: #ff9900;"><strong><a style="color: #ff9900;" href="/">UFANICE</a></strong></span>&nbsp;เข้าตรงเลย ระบบจะพาไปลิงค์ล่าสุดเอง หมดปัญหาเรื่องหาลิงค์ทางเข้าใหม่อีกต่อไป</p>
       <p><a href="/"><img fetchpriority="high" decoding="async" class="aligncenter wp-image-2422 size-full" src="https://ufanance12.com/wp-content/uploads/2025/09/photo_2025-09-14_22-54-34-2.jpg" alt="" width="680" height="200"></a></p>
     `
   },
@@ -212,8 +212,8 @@ export const articles: Article[] = [
     author: 'headeditor',
     content: `
       <h2 style="text-align: center;">ทีเด็ดบอลเต็ง เว็บแท้ส่งตรงจากต่างประเทศ</h2>
-      <p>หากคุณกำลังมองเว็บแทงบอลออนไลน์ที่ได้มาตรฐาน และมีการบริการที่ครบครัน ตอบโจทย์ทุกความต้องการในเว็บเดียว UFANANCE เป็นคำตอบที่ดีที่สุด</p>
-      <h3>ทำไมต้องเลือก UFANANCE</h3>
+      <p>หากคุณกำลังมองเว็บแทงบอลออนไลน์ที่ได้มาตรฐาน และมีการบริการที่ครบครัน ตอบโจทย์ทุกความต้องการในเว็บเดียว UFANICE เป็นคำตอบที่ดีที่สุด</p>
+      <h3>ทำไมต้องเลือก UFANICE</h3>
       <ul>
         <li>เว็บตรงจากต่างประเทศ ไม่ผ่านเอเย่นต์</li>
         <li>บริการครบวงจร ทั้งแทงบอล คาสิโน สล็อต</li>
@@ -228,11 +228,11 @@ export const articles: Article[] = [
   },
   {
     slug: 'ufanance-casino-online',
-    title: 'UFANANCE คาสิโนออนไลน์บาคาร่า สล็อต แทงบอล ในเว็บเดียว ทำเงินสุดง่าย ได้เงินจริงชัวร์',
+    title: 'UFANICE คาสิโนออนไลน์บาคาร่า สล็อต แทงบอล ในเว็บเดียว ทำเงินสุดง่าย ได้เงินจริงชัวร์',
     publishedDate: '2020-12-20',
     author: 'headeditor',
     content: `
-      <h2 style="text-align: center;">UFANANCE คาสิโนออนไลน์คุณภาพและได้มาตรฐานสากล</h2>
+      <h2 style="text-align: center;">UFANICE คาสิโนออนไลน์คุณภาพและได้มาตรฐานสากล</h2>
       <p>คาสิโนออนไลน์ที่ออกแบบการใช้งานมาเพื่อนักพนันออนไลน์โดยเฉพาะเลยก็ว่าได้ เนื่องจากที่นี่เป็นเว็บพนันออนไลน์ที่เปิดให้บริการถูกต้องตามกฎหมาย มีใบรับรองจากหน่วยงานระหว่างประเทศ</p>
 
       <h3>บริการหลากหลาย ครบวงจร</h3>
@@ -244,7 +244,7 @@ export const articles: Article[] = [
         <li><strong>หวยออนไลน์</strong> - หวยไทย หวยหุ้น หวยยี่กี ครบทุกประเภท</li>
       </ul>
 
-      <h3>ข้อดีของการเล่นกับ UFANANCE</h3>
+      <h3>ข้อดีของการเล่นกับ UFANICE</h3>
       <ol>
         <li>ระบบฝาก-ถอน AUTO ใช้เวลาไม่เกิน 10 วินาที</li>
         <li>ไม่มีขั้นต่ำในการฝาก-ถอน</li>
@@ -254,7 +254,7 @@ export const articles: Article[] = [
       </ol>
 
       <h3>ทำเงินง่าย ได้เงินจริง</h3>
-      <p>UFANANCE เป็นเว็บที่จ่ายจริง มีสมาชิกถอนเงินทุกวัน ไม่มีประวัติโกง หรือไม่จ่ายเงิน เราเป็นเว็บตรงจากบริษัทแม่ในต่างประเทศ มั่นคงและปลอดภัย 100%</p>
+      <p>UFANICE เป็นเว็บที่จ่ายจริง มีสมาชิกถอนเงินทุกวัน ไม่มีประวัติโกง หรือไม่จ่ายเงิน เราเป็นเว็บตรงจากบริษัทแม่ในต่างประเทศ มั่นคงและปลอดภัย 100%</p>
 
       <p style="text-align: center; margin-top: 30px;"><strong style="color: #ff9900; font-size: 18px;">สมัครสมาชิกวันนี้ รับโบนัสทันที 100%</strong></p>
       <p style="text-align: center;"><a href="/register" style="background: linear-gradient(to bottom, #fc5353 0%, #c00 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; display: inline-block; font-weight: bold;">สมัครสมาชิกเลย</a></p>
@@ -295,7 +295,7 @@ export const articles: Article[] = [
 
       <h3>วิธีการแทงบอล</h3>
       <ol>
-        <li>สมัครสมาชิกกับ UFANANCE</li>
+        <li>สมัครสมาชิกกับ UFANICE</li>
         <li>ฝากเงินเข้าระบบ (ขั้นต่ำไม่จำกัด)</li>
         <li>เลือกคู่บอลที่ต้องการแทง</li>
         <li>ระบุจำนวนเงินที่ต้องการเดิมพัน</li>

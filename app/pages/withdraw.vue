@@ -274,11 +274,11 @@ onMounted(async () => {
 })
 
 useHead({
-  title: 'ถอนเงิน - UFANANCE',
+  title: 'ถอนเงิน - UFANICE',
   meta: [
     {
       name: 'description',
-      content: 'ถอนเงินจาก UFANANCE รวดเร็วภายใน 30 วินาที'
+      content: 'ถอนเงินจาก UFANICE รวดเร็วภายใน 30 วินาที'
     }
   ]
 })

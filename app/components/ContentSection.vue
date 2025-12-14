@@ -7,8 +7,8 @@
           <a href="https://ufanance12.com/วิธีแก้ไขปัญหาเข้าเว็บ/">
             <img
               class="aligncenter wp-image-2440 size-full"
-              src="https://ufanance12.com/wp-content/uploads/2025/09/UFANANCE.gif"
-              alt="UFANANCE"
+              src="https://ufanance12.com/wp-content/uploads/2025/09/UFANICE.gif"
+              alt="UFANICE"
               width="680"
               height="200"
             >
@@ -20,7 +20,7 @@
           <img
             class="wp-image-137 aligncenter x-box-main"
             src='/img/logo/logo-1.png'
-            alt="UFANANCE Logo"
+            alt="UFANICE Logo"
             width="668"
             height="247"
           >
@@ -28,7 +28,7 @@
 
         <!-- Main Title -->
         <h3 style="text-align: center;">
-          <span style="color: #f3c31a;">UFANANCE เว็บพนันบอลออนไลน์ แทงบอล UFABET อันดับ 1</span>
+          <span style="color: #f3c31a;">UFANICE เว็บพนันบอลออนไลน์ แทงบอล UFABET อันดับ 1</span>
         </h3>
 
         <!-- Main Content Paragraph 1 -->
@@ -58,14 +58,14 @@
 
         <!-- Section Heading -->
         <h2>
-          เว็บบอล<span style="color: #fbd41a;"> UFANANCE </span>สายตรงจาก<span style="color: #fbd41a;"> UFABET <strong>สังเวียนเดิมพันของเซียนพนันออนไลน์</strong></span>
+          เว็บบอล<span style="color: #fbd41a;"> UFANICE </span>สายตรงจาก<span style="color: #fbd41a;"> UFABET <strong>สังเวียนเดิมพันของเซียนพนันออนไลน์</strong></span>
         </h2>
 
         <!-- Main Content Paragraph 2 -->
         <p>
           เว็บแทงบอลออนไลน์ เบอร์หนึ่งของไทยที่เปิดให้บริการพนันออนไลน์อย่างเป็นทางการ รวมไปถึงการทายผลกีฬาออนไลน์ ทายสกอร์ผลฟุตบอล
           แทงบอลออนไลน์ที่ค่าน้ำดีที่สุด คาสิโน บาคาร่า มวย หวย สล็อต และอีกพนันอื่นๆมากมาย ผู้เล่นสามารถเข้ามาวางเดิมพันได้ง่ายๆ
-          จากทุกที่ทุกเวลาผ่านทางเว็บไซต์ UFANANCE เพียงแค่หยิบมือถือขึ้นมาไม่ว่าจะเป็นระบบ iOS หรือ Android ก็สามารถสมัครสมาชิกกับทางเราได้ง่ายๆ
+          จากทุกที่ทุกเวลาผ่านทางเว็บไซต์ UFANICE เพียงแค่หยิบมือถือขึ้นมาไม่ว่าจะเป็นระบบ iOS หรือ Android ก็สามารถสมัครสมาชิกกับทางเราได้ง่ายๆ
           พร้อมโปรโมชั่นดีๆที่มีมาบริการทุกวัน สมาชิกใหม่ สมัครแล้ว รับโบนัส 50% ได้ทันที แล้วเริ่มต้นเล่นพนันออนไลน์ที่ต้องการได้ทันที
           สายพนันบอลก็มีบอลให้แทงทุกคู่ ทุกคืน สามารถเข้าแทงบอลได้ตั้งแต่ขั้นต่ำ 10฿ จนสูงถึง 150,000฿
         </p>
@@ -75,7 +75,7 @@
           <img
             class="aligncenter wp-image-2286 size-full"
             src="https://ufanance12.com/wp-content/uploads/2024/10/728x200-web-noline.gif"
-            alt="UFANANCE Banner"
+            alt="UFANICE Banner"
             width="728"
             height="200"
           >
@@ -98,7 +98,7 @@
           <img
             class="aligncenter wp-image-2287 size-full"
             src="https://ufanance12.com/wp-content/uploads/2024/10/728x200-web-2-noline.gif"
-            alt="UFANANCE Promotion"
+            alt="UFANICE Promotion"
             width="728"
             height="200"
           >
@@ -106,7 +106,7 @@
 
         <!-- Call to Action -->
         <h3 style="text-align: center;">
-          <span style="color: #ffcc00;">อย่ารอช้าที่จะเข้ามาแทงบอลออนไลน์ที่ UFANANCE โปรโมชั่นโดนใจมาก</span>
+          <span style="color: #ffcc00;">อย่ารอช้าที่จะเข้ามาแทงบอลออนไลน์ที่ UFANICE โปรโมชั่นโดนใจมาก</span>
         </h3>
 
         <p>&nbsp;</p>
