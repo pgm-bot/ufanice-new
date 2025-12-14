@@ -283,8 +283,9 @@ useHead({
 /* Header Text */
 .header-text {
   font-size: clamp(18px, 2.5vw, 25px);
-  height: auto;
-  padding: 15px;
+  height: auto !important;
+  width: 100% !important;
+  padding: 15px !important;
   border: 1px solid #ccc;
   border-radius: 8px;
   background: white;
@@ -292,19 +293,30 @@ useHead({
   margin: 20px 0;
   font-weight: 600;
   color: #1e3c72;
+  line-height: 1.6 !important;
+  text-align: center;
+  word-wrap: break-word;
+  white-space: normal;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
 }
 
 /* Month Selector */
 .month-selector {
   font-size: clamp(18px, 2.5vw, 25px);
-  height: auto;
-  padding: 15px;
+  height: auto !important;
+  width: 100% !important;
+  padding: 15px !important;
   border: 1px solid #ccc;
   border-radius: 8px;
   background: white;
   margin: 20px 0;
   font-weight: 600;
   color: #333;
+  line-height: 1.6 !important;
+  text-align: center;
+  border-bottom: 1px solid #ccc !important;
+  border-right: 1px solid #ccc !important;
 }
 
 .month-select {
@@ -461,11 +473,17 @@ useHead({
 
   .header-text {
     font-size: clamp(14px, 2vw, 18px);
-    padding: 10px;
+    padding: 10px !important;
+    width: 100% !important;
+    height: auto !important;
+    line-height: 1.5 !important;
   }
 
   .month-selector {
     font-size: clamp(14px, 2vw, 18px);
+    width: 100% !important;
+    height: auto !important;
+    padding: 12px 10px !important;
   }
 }
 </style>
