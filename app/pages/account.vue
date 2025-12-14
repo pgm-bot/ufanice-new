@@ -1,6 +1,6 @@
 <template>
     <div class="page-template page-template-page page-template-account page-template-pageaccount-php page page-id-84">
-        <HeadMobile></HeadMobile>
+        <!-- <HeadMobile></HeadMobile> -->
         <Header></Header>
       
         <FloatingGameMenu></FloatingGameMenu>

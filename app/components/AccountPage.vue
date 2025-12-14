@@ -85,7 +85,7 @@ const updatePw = () => {
 <style scoped>
 /* ===================== GLOBAL ===================== */
 .account-wrapper {
-  padding: 60px 0 60px 0 ;
+  padding: 60px 8px 60px 8px ;
   max-width: 1100px;
   margin: auto;
   font-family: thaisanslite_r1;
@@ -216,5 +216,8 @@ const updatePw = () => {
   .info-row {
     font-size: 16px;
   }
+}
+.account-wrapper {
+  padding-bottom: 120px; /* เผื่อ FixedFooter */
 }
 </style>
