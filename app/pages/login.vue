@@ -96,14 +96,16 @@ const handleLogin = async () => {
         if (result && result.success) {
             // แสดง success message
             const username = result.user?.username || loginForm.value.phone
-            showSuccess('เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${username}`)
+            showSuccess('เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${username}`)?.then(() => {
+                location.href = '/member'
+            })
 
             // Clear form
             loginForm.value = { phone: '', password: '' }
 
             // Redirect to member page
             setTimeout(() => {
-                router.push('/member')
+                location.href = '/member'
             }, 1000)
         } else {
             showError('เข้าสู่ระบบไม่สำเร็จ', 'ไม่พบข้อมูลผู้ใช้')
