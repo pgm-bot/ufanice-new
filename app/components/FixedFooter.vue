@@ -33,7 +33,7 @@
     </a>
 
     <!-- ถอนเงิน (แสดงเฉพาะเมื่อล็อกอินแล้ว) -->
-    <a v-show="loggedIn" class="readylogin" href="/withdrawal#ct_from">
+    <a v-show="loggedIn" class="readylogin" href="/withdraw#ct_from">
       <span class="link_ico ico_4">
         <i class="fas fa-hand-holding-usd"></i>
       </span>

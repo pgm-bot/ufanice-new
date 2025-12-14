@@ -24,7 +24,7 @@ export const articles: Article[] = [
       <p><a href="/login"><img fetchpriority="high" decoding="async" class="wp-image-746 size-full aligncenter" src="https://ufanance12.com/wp-content/uploads/2022/09/messageImage_1663164560401-1.jpg" alt="" width="1404" height="880"></a></p>
       <p>ศูนย์รวมคาสิโนออนไลน์ <span style="color: #ffcc00;"><span style="text-decoration: underline;"><strong>UFANICE</strong></span> <span style="color: #000000;">มั่นคงปลอดภัย </span></span><span style="color: #ffcc00;"><span style="color: #000000;">&nbsp;มั่นใจ ฝากถอนไว ด้วย<span style="color: #00ff00;">ระบบAI</span> ที่ล้ำสมัย มีความเสถียรและแม่นยำ <strong>ไม่ต้องง้อแอดมิน</strong> <strong>สามารถสั่งงานได้ด้วยตัวเอง ผ่านระบบAUTO AI ถอนเพียง 10วิ</strong> เท่านี้สามารถเล่น <span style="text-decoration: underline; color: #ff0000;">คาสิโนออนไลน์</span> </span></span><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">บาคาร่า</span>&nbsp;</span> <span style="text-decoration: underline; color: #ff0000;">รูเล็ต เสือมังกร ป็อกเด้ง</span> ได้จากทุกที่ทั่วโลกที่มี Internet สะดวก สบาย เล่นได้ทุกที่ ทุกเวลา</span></span></p>
       <p><img decoding="async" class="wp-image-1401 size-full aligncenter" src="https://ufanance12.com/wp-content/uploads/2023/06/728x200.gif" alt="" width="728" height="200"></p>
-      <p><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ffcc00; text-decoration: underline;"> UFANICE.COM</span></span> เป็นเว็บไซต์ที่มั่นคง ปลอดภัย และได้รับการยอมรับจากสากลขึ้นชื่อเรื่องการเดิมพันบอลและคาสิโน ไม่มีใครไม่รู้จัก UFABET&nbsp; เว็บเรา(ufanance.com) ยิงตรงจาก UFABET ไม่ผ่านตัวแทน ทำให้ไม่มีการล็อคยูสหรือล็อคไพ่ ระบบคาสิโนออนไลน์จากแบรนด์ดัง มาตราฐานระดับสากล เช่น <span style="color: #00ff00;">SA GAMING</span>, <span style="color: #ff00ff;">SEXY BACCARAT, <span style="color: #ffff99;">eBET</span></span>, <span style="color: #808080;">WORLD ENTERTAINMENT, <span style="color: #333399;">EVOLUTION CASINO, <span style="color: #993300;">VENUS CASINO, <span style="color: #0000ff;">BIG GAMING CASINO </span></span></span></span><span style="text-decoration: underline;">บาคาร่าออนไลน์</span> <span style="text-decoration: underline;">คาสิโนสด</span> <span style="text-decoration: underline;">แบล็คแจ็ค</span> <span style="text-decoration: underline;">ป็อกเด้ง</span> <span style="text-decoration: underline;">เสือมังกร</span> <span style="text-decoration: underline;">กำถั่ว </span></span></span><span style="color: #ffcc00;"><span style="color: #000000;">และอื่นๆอีกมากมาย ที่เราคัดสรรมาอย่างดี เพื่อให้ลูกค้าได้เล่นอย่างมีความสุข ไม่สะดุด หรือเด้งหลุด</span></span></p>
+      <p><span style="color: #ffcc00;"><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: #ffcc00; text-decoration: underline;"> UFANICE.COM</span></span> เป็นเว็บไซต์ที่มั่นคง ปลอดภัย และได้รับการยอมรับจากสากลขึ้นชื่อเรื่องการเดิมพันบอลและคาสิโน ไม่มีใครไม่รู้จัก UFABET&nbsp; เว็บเรา(ufanice.com) ยิงตรงจาก UFABET ไม่ผ่านตัวแทน ทำให้ไม่มีการล็อคยูสหรือล็อคไพ่ ระบบคาสิโนออนไลน์จากแบรนด์ดัง มาตราฐานระดับสากล เช่น <span style="color: #00ff00;">SA GAMING</span>, <span style="color: #ff00ff;">SEXY BACCARAT, <span style="color: #ffff99;">eBET</span></span>, <span style="color: #808080;">WORLD ENTERTAINMENT, <span style="color: #333399;">EVOLUTION CASINO, <span style="color: #993300;">VENUS CASINO, <span style="color: #0000ff;">BIG GAMING CASINO </span></span></span></span><span style="text-decoration: underline;">บาคาร่าออนไลน์</span> <span style="text-decoration: underline;">คาสิโนสด</span> <span style="text-decoration: underline;">แบล็คแจ็ค</span> <span style="text-decoration: underline;">ป็อกเด้ง</span> <span style="text-decoration: underline;">เสือมังกร</span> <span style="text-decoration: underline;">กำถั่ว </span></span></span><span style="color: #ffcc00;"><span style="color: #000000;">และอื่นๆอีกมากมาย ที่เราคัดสรรมาอย่างดี เพื่อให้ลูกค้าได้เล่นอย่างมีความสุข ไม่สะดุด หรือเด้งหลุด</span></span></p>
 
       <h3 style="text-align: center;"><span style="color: #ffcc00;"><span style="color: #000000;"><span style="color: #ff00ff;">SEXY BACCARAT</span></span></span></h3>
       <p><img decoding="async" class="size-full wp-image-748 aligncenter" src="https://ufanance12.com/wp-content/uploads/2022/09/messageImage_1663181094040-3.jpg" alt="" width="1382" height="755"></p>
@@ -227,7 +227,7 @@ export const articles: Article[] = [
     `
   },
   {
-    slug: 'ufanance-casino-online',
+    slug: 'ufanice-casino-online',
     title: 'UFANICE คาสิโนออนไลน์บาคาร่า สล็อต แทงบอล ในเว็บเดียว ทำเงินสุดง่าย ได้เงินจริงชัวร์',
     publishedDate: '2020-12-20',
     author: 'headeditor',
@@ -325,7 +325,7 @@ export const articles: Article[] = [
     slug: 'customer-reviews',
     title: 'รีวิวคำชมจากลูกค้า',
     publishedDate: '2024-10-01',
-    author: 'ufanance-team',
+    author: 'ufanice-team',
     excerpt: 'รวมรีวิวจริงจากลูกค้ากว่า 1,000 รีวิว การันตีงานบริการและความรวดเร็วในการฝาก-ถอน',
     coverImage: 'https://ufanance12.com/wp-content/uploads/2025/02/120101.jpg',
     content: customerReviewsContent
@@ -334,7 +334,7 @@ export const articles: Article[] = [
     slug: 'affiliate-program',
     title: 'แนะนำเพื่อนสร้างรายได้',
     publishedDate: '2024-12-15',
-    author: 'ufanance-team',
+    author: 'ufanice-team',
     excerpt: 'แชร์ลิงก์รับส่วนแบ่ง 0.6% ทุกยอดเดิมพัน พร้อมตัวอย่างการทำรายได้หลักแสนต่อเดือน',
     coverImage: 'https://ufanance12.com/wp-content/uploads/2020/12/messageImage_1729137834632.jpg',
     content: affiliateContent
@@ -343,7 +343,7 @@ export const articles: Article[] = [
     slug: 'promotions',
     title: 'โปรโมชั่น',
     publishedDate: '2025-01-05',
-    author: 'ufanance-team',
+    author: 'ufanice-team',
     excerpt: 'รวมโปรเด็ด โบนัสฝากแรก คืนยอดเสีย และกิจกรรมพิเศษ พร้อมปุ่มกดรับสิทธิ์ทันที',
     coverImage: 'https://ufanance12.com/wp-content/uploads/2023/06/01-1.jpg',
     content: promotionsContent
@@ -352,7 +352,7 @@ export const articles: Article[] = [
     slug: 'contact-us',
     title: 'ติดต่อเรา',
     publishedDate: '2025-02-10',
-    author: 'ufanance-team',
+    author: 'ufanice-team',
     excerpt: 'ช่องทางติดต่อ Call Center 24 ชั่วโมง ผ่านไลน์ @ufanancev4 และ Telegram @ufanancev2',
     coverImage: 'https://ufanance12.com/wp-content/uploads/2024/12/@ufanancev4-300x300.png',
     content: contactContent
