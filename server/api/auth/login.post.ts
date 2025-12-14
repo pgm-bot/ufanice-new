@@ -25,6 +25,8 @@ export default defineEventHandler(async (event) => {
       },
     })
 
+    console.log('result', result)
+
     // ตรวจสอบผลลัพธ์จาก API
     if (result && result.token) {
       const userId = result.userData?.id || result.payload?.id
@@ -32,7 +34,7 @@ export default defineEventHandler(async (event) => {
       const phone = result.userData?.phone || result.payload?.phone
       
       // สร้าง memberId จาก phone (ตามรูปแบบเดิม)
-      const memberId = phone ? 'ufnblnice' + phone.slice(-6) : `ufnblnice${userId}`
+      const memberId = 'ufnblnice' + username.toLowerCase()
       
       // บันทึก session ด้วย nuxt-auth-utils
       await setUserSession(event, {

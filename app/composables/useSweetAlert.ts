@@ -65,7 +65,7 @@ export const useSweetAlert = () => {
       html: options.html,
       icon: options.icon,
       imageUrl: options.imageUrl,
-      confirmButtonText: options.confirmButtonText || 'ตรวจสอบ',
+      confirmButtonText: options.confirmButtonText || 'ตกลง',
       confirmButtonColor: '#3085d6',
       showClass: {
         popup: 'swal2-show'
@@ -111,7 +111,7 @@ export const useSweetAlert = () => {
       title,
       text,
       icon: 'success',
-      confirmButtonText: 'ตรวจสอบ',
+      confirmButtonText: 'ตกลง',
       confirmButtonColor: '#3085d6',
       timer: 2000,
       timerProgressBar: true
@@ -128,7 +128,7 @@ export const useSweetAlert = () => {
       title,
       text,
       icon: 'error',
-      confirmButtonText: 'ตรวจสอบ',
+      confirmButtonText: 'ตกลง',
       confirmButtonColor: '#3085d6'
     })
   }

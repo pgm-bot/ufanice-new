@@ -9,7 +9,6 @@
                     <div class="tt_l tt_full">
                         <!-- User Dashboard -->
                         <UserDashboard
-                            :userData="userDashboardData"
                             @logout="handleLogout"
                             @connectLine="handleConnectLine" />
                     </div>
@@ -20,38 +19,9 @@
 </template>
 
 <script setup lang="ts">
-interface UserData {
-    memberId: string
-    username: string
-    credit: number
-    gamePassword: string
-    lineConnected: boolean
-}
-
 const router = useRouter()
-const { user, loggedIn, clear } = useUserSession()
+const { loggedIn, clear } = useUserSession()
 const { showSuccess, showError } = useSweetAlert()
-
-// แปลง user session เป็น UserData format
-const userDashboardData = computed<UserData>(() => {
-    if (!user.value) {
-        return {
-            memberId: '',
-            username: '',
-            credit: 0,
-            gamePassword: '',
-            lineConnected: false
-        }
-    }
-    
-    return {
-        memberId: (user.value as any).memberId || '',
-        username: (user.value as any).username || '',
-        credit: (user.value as any).credit || 0,
-        gamePassword: (user.value as any).gamePassword || '',
-        lineConnected: (user.value as any).lineConnected || false
-    }
-})
 
 // Logout Handler
 const handleLogout = async () => {

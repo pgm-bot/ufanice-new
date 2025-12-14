@@ -234,14 +234,33 @@ interface Promotion {
     isExternal: boolean
 }
 
-const props = defineProps<{
-    userData: UserData
-}>()
-
 const emit = defineEmits<{
     logout: []
     connectLine: []
 }>()
+
+const { user } = useUserSession()
+
+// แปลง user session เป็น UserData format
+const userData = computed<UserData>(() => {
+    if (!user.value) {
+        return {
+            memberId: '',
+            username: '',
+            credit: 0,
+            gamePassword: '',
+            lineConnected: false
+        }
+    }
+    
+    return {
+        memberId: (user.value as any).memberId || '',
+        username: (user.value as any).username || '',
+        credit: (user.value as any).credit || 0,
+        gamePassword: (user.value as any).gamePassword || '',
+        lineConnected: (user.value as any).lineConnected || false
+    }
+})
 
 const timestamp = ref('')
 const isPromoModalVisible = ref(false)
