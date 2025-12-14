@@ -37,8 +37,8 @@
                                             placeholder="กรอกรหัสผ่าน">
                                     </div>
                                     <input type="hidden" name="task" value="login">
-                                    <button class="tt_r fr_submit" type="submit">
-                                        <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+                                    <button class="tt_r fr_submit" type="submit" :disabled="loading">
+                                        <i class="fas fa-sign-in-alt"></i> {{ loading ? 'กำลังเข้าสู่ระบบ...' : 'เข้าสู่ระบบ' }}
                                     </button>
                                 </form>
                             </div>
@@ -53,54 +53,27 @@
 </template>
 
 <script setup lang="ts">
-import Swal from 'sweetalert2'
-
 interface LoginForm {
     phone: string
     password: string
 }
 
-interface UserData {
-    memberId: string
-    username: string
-    credit: number
-    gamePassword: string
-    lineConnected: boolean
-}
-
 const router = useRouter()
-const isLoggedIn = ref(false)
+const { user, loggedIn, clear } = useUserSession()
+const { showSuccess, showError } = useSweetAlert()
+
+const loading = ref(false)
 const loginForm = ref<LoginForm>({
     phone: '',
     password: ''
 })
 
-// Helper functions for notifications
-const showSuccess = (title: string, text?: string) => {
-    Swal.fire({
-        icon: 'success',
-        title: title,
-        text: text,
-        timer: 2000,
-        showConfirmButton: false
-    })
-}
-
-const showError = (title: string, text?: string) => {
-    Swal.fire({
-        icon: 'error',
-        title: title,
-        text: text,
-        confirmButtonText: 'ลองใหม่'
-    })
-}
-const setCookie = (name: string, value: string, days: number) => {
-    if (!process.client) return
-    const d = new Date()
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000))
-    const expires = 'expires=' + d.toUTCString()
-    document.cookie = name + '=' + value + ';' + expires + ';path=/'
-}
+// Redirect ถ้า login อยู่แล้ว
+watch(loggedIn, (isLoggedIn) => {
+    if (isLoggedIn && process.client) {
+        router.push('/member')
+    }
+}, { immediate: true })
 
 const handleLogin = async () => {
     if (!loginForm.value.phone || !loginForm.value.password) {
@@ -108,37 +81,39 @@ const handleLogin = async () => {
         return
     }
 
-    // TODO: Implement actual API call
-    // Simulate login for demo
+    loading.value = true
     try {
-        // สร้างข้อมูลผู้ใช้
-        const memberId = 'ufnblnc' + loginForm.value.phone.slice(-6)
-        const user: UserData = {
-            memberId: memberId,
-            username: loginForm.value.phone,
-            credit: 0, // จะได้จาก API
-            gamePassword: 'AbX922123', // จะได้จาก API
-            lineConnected: false
+        // เรียก server API route ที่จะจัดการ session
+        const result = await $fetch<{ success: boolean; user: any }>('/api/auth/login', {
+            method: 'POST',
+            body: {
+                phone: loginForm.value.phone,
+                password: loginForm.value.password,
+            },
+        })
+
+        // ตรวจสอบผลลัพธ์
+        if (result && result.success) {
+            // แสดง success message
+            const username = result.user?.username || loginForm.value.phone
+            showSuccess('เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${username}`)
+
+            // Clear form
+            loginForm.value = { phone: '', password: '' }
+
+            // Redirect to member page
+            setTimeout(() => {
+                router.push('/member')
+            }, 1000)
+        } else {
+            showError('เข้าสู่ระบบไม่สำเร็จ', 'ไม่พบข้อมูลผู้ใช้')
         }
-
-        // บันทึกลง cookie
-        if (process.client) {
-            setCookie('users', JSON.stringify(user), 30)
-        }
-
-        // แสดง success message
-        showSuccess('เข้าสู่ระบบสำเร็จ', `ยินดีต้อนรับ ${user.username}`)
-
-        // Clear form
-        loginForm.value = { phone: '', password: '' }
-
-        // Redirect to member page
-        setTimeout(() => {
-            router.push('/member')
-        }, 1000)
-    } catch (error) {
+    } catch (error: any) {
         console.error('Login error:', error)
-        showError('เข้าสู่ระบบไม่สำเร็จ', 'กรุณาลองใหม่อีกครั้ง')
+        const errorMessage = error?.data?.message || error?.message || 'กรุณาลองใหม่อีกครั้ง'
+        showError('เข้าสู่ระบบไม่สำเร็จ', errorMessage)
+    } finally {
+        loading.value = false
     }
 }
 </script>

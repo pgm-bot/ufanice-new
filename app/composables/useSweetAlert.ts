@@ -9,8 +9,8 @@ export const useSweetAlert = () => {
 
     Swal.fire({
       title: 'แจ้งเปลี่ยนลิ้ง URL หน้าเว็บ',
-      html: 'ของแท้ต้อง <a style="color:green" href="https://t.ly/UNANCE" target="_blank">ufanance12.com</a> เท่านั้น!!<br>',
-      imageUrl: 'https://sabackufanance.com/admin/uploads/15_news.jpg?t=1762563656',
+      html: 'ของแท้ต้อง <a style="color:green" href="https://t.ly/UNANCE" target="_blank">ufanice12.com</a> เท่านั้น!!<br>',
+      imageUrl: 'https://sabackufanice.com/admin/uploads/15_news.jpg?t=1762563656',
       imageAlt: 'URL Change Notification',
       confirmButtonText: 'OK',
       confirmButtonColor: '#3085d6',
