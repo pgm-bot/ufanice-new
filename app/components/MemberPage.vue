@@ -29,56 +29,51 @@ interface UserData {
 }
 
 const router = useRouter()
+const { user, loggedIn, clear } = useUserSession()
 const { showSuccess, showError } = useSweetAlert()
 
-const userData = ref<UserData>({
-    memberId: '',
-    username: '',
-    credit: 0,
-    gamePassword: '',
-    lineConnected: false
+// แปลง user session เป็น UserData format
+const userDashboardData = computed<UserData>(() => {
+    if (!user.value) {
+        return {
+            memberId: '',
+            username: '',
+            credit: 0,
+            gamePassword: '',
+            lineConnected: false
+        }
+    }
+    
+    return {
+        memberId: (user.value as any).memberId || '',
+        username: (user.value as any).username || '',
+        credit: (user.value as any).credit || 0,
+        gamePassword: (user.value as any).gamePassword || '',
+        lineConnected: (user.value as any).lineConnected || false
+    }
 })
 
-const userDashboardData = computed(() => userData.value)
-
-// Cookie Management Functions
-const getCookie = (name: string): string | null => {
-    if (!process.client) return null
-    const nameEQ = name + '='
-    const ca = document.cookie.split(';')
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i]
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length)
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
-    }
-    return null
-}
-
-const deleteCookie = (name: string) => {
-    if (!process.client) return
-    document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;'
-}
-
 // Logout Handler
-const handleLogout = () => {
-    if (process.client) {
-        deleteCookie('users')
-    }
+const handleLogout = async () => {
+    try {
+        // เรียก logout API
+        await $fetch('/api/auth/logout', { method: 'POST' })
+        
+        // Clear session
+        await clear()
+        
+        showSuccess('ออกจากระบบสำเร็จ')
 
-    userData.value = {
-        memberId: '',
-        username: '',
-        credit: 0,
-        gamePassword: '',
-        lineConnected: false
-    }
-
-    showSuccess('ออกจากระบบสำเร็จ')
-
-    // Redirect to login (use replace to not add to history)
-    setTimeout(() => {
+        // Redirect to login (use replace to not add to history)
+        setTimeout(() => {
+            router.replace('/login')
+        }, 1000)
+    } catch (error) {
+        console.error('Logout error:', error)
+        // Clear session แม้ว่า API จะ error
+        await clear()
         router.replace('/login')
-    }, 1000)
+    }
 }
 
 // Connect LINE Handler
@@ -86,24 +81,14 @@ const handleConnectLine = () => {
     // TODO: Implement LINE login connection
     console.log('Connect LINE account')
     showSuccess('เชื่อมต่อ LINE สำเร็จ')
-    userData.value.lineConnected = true
+    // อัปเดต session ถ้าจำเป็น
 }
 
 // Check existing login on mount
 onMounted(() => {
     if (process.client) {
-        const userCookie = getCookie('users')
-        if (userCookie) {
-            try {
-                const user = JSON.parse(userCookie)
-                userData.value = user
-            } catch (e) {
-                console.error('Error parsing user cookie:', e)
-                // Redirect to login if cookie is invalid (use replace to not add to history)
-                router.replace('/login')
-            }
-        } else {
-            // Redirect to login if not logged in (use replace to not add to history)
+        if (!loggedIn.value) {
+            // Redirect to login if not logged in
             router.replace('/login')
         }
     }

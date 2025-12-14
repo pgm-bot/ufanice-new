@@ -14,6 +14,7 @@
     "@oxc-parser/binding-win32-x64-msvc": "^0.101.0",
     "@oxc-transform/binding-win32-x64-msvc": "^0.101.0",
     "nuxt": "^4.2.1",
+    "nuxt-auth-utils": "^0.5.26",
     "sweetalert2": "^11.26.3",
     "vue": "^3.5.22",
     "vue-router": "^4.6.3"

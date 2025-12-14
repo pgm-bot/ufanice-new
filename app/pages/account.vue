@@ -41,6 +41,11 @@
 </template>
 
 <script setup lang="ts">
+// Protect this route with auth middleware
+definePageMeta({
+    middleware: 'auth'
+})
+
 interface UserData {
     memberId: string
     accountNumber: string
@@ -54,14 +59,34 @@ interface UserData {
 const route = useRoute()
 const showHistory = computed(() => route.query.h === 'h')
 
-const isLoggedIn = ref(false)
-const userData = ref<UserData>({
-    memberId: '',
-    accountNumber: '',
-    gamePassword: '',
-    phone: '',
-    username: '',
-    credit: 0
+const { user, loggedIn } = useUserSession()
+const { showSuccess, showError } = useSweetAlert()
+
+// เช็คสถานะ login
+const isLoggedIn = computed(() => loggedIn.value)
+
+// แปลง user session เป็น UserData format
+const userData = computed<UserData>(() => {
+    if (!user.value) {
+        return {
+            memberId: '',
+            accountNumber: '',
+            gamePassword: '',
+            phone: '',
+            username: '',
+            credit: 0
+        }
+    }
+    
+    const sessionUser = user.value as any
+    return {
+        memberId: sessionUser.memberId || '',
+        accountNumber: sessionUser.accountNumber || '2482605355', // Default value
+        gamePassword: sessionUser.gamePassword || '',
+        phone: sessionUser.phone || '',
+        username: sessionUser.username || '',
+        credit: sessionUser.credit || 0
+    }
 })
 
 const accountData = computed(() => ({
@@ -72,71 +97,19 @@ const accountData = computed(() => ({
     credit: userData.value.credit
 }))
 
-const { showSuccess, showError } = useSweetAlert()
-
-// Cookie Management Functions
-const getCookie = (name: string): string | null => {
-    if (!process.client) return null
-    const nameEQ = name + '='
-    const ca = document.cookie.split(';')
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i]
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length)
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length)
-    }
-    return null
-}
-
-const setCookie = (name: string, value: string, days: number) => {
-    if (!process.client) return
-    const d = new Date()
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000))
-    const expires = 'expires=' + d.toUTCString()
-    document.cookie = name + '=' + value + ';' + expires + ';path=/'
-}
-
 const handleUpdatePassword = async (newPassword: string) => {
     // TODO: Implement actual password update API call
     console.log('Update password:', newPassword)
 
-    // Update local data
-    userData.value.gamePassword = newPassword
-
-    // Update cookie
-    if (process.client) {
-        setCookie('users', JSON.stringify(userData.value), 30)
-    }
-
+    // อัปเดต session (ต้องสร้าง API route สำหรับ update session)
+    // ตอนนี้แค่แสดง success message
     showSuccess('อัพเดทรหัสผ่านสำเร็จ')
 }
 
-// Check existing login on mount
-onMounted(() => {
-    if (process.client) {
-        const userCookie = getCookie('users')
-        if (userCookie) {
-            try {
-                const user = JSON.parse(userCookie)
-                userData.value = {
-                    memberId: user.memberId || '',
-                    accountNumber: user.accountNumber || '2482605355', // Default value
-                    gamePassword: user.gamePassword || 'AbX922123',
-                    phone: user.phone || user.username || '',
-                    username: user.username || '',
-                    credit: user.credit || 0
-                }
-                isLoggedIn.value = true
-            } catch (e) {
-                console.error('Error parsing user cookie:', e)
-            }
-        }
-    }
-})
-
 useHead({
-    title: 'ข้อมูลบัญชี - UFANANCE',
+    title: 'ข้อมูลบัญชี - ufanice',
     meta: [
-        { name: 'description', content: 'ข้อมูลบัญชีของคุณ UFANANCE คาสิโนออนไลน์' }
+        { name: 'description', content: 'ข้อมูลบัญชีของคุณ ufanice คาสิโนออนไลน์' }
     ],
     link: [
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css' }
