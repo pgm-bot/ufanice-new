@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 
   // Route rules for API proxy
   routeRules: {
-    '/api': { proxy: `${process.env.API_URL}/api` }, // Proxy only v1 API
+    '/api/v1/**': { proxy: `${process.env.API_URL}/**` }, // Proxy only v1 API
   },
 
   runtimeConfig: {

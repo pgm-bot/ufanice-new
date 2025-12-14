@@ -4,7 +4,7 @@
         <div class="fr_uc">
             <span class="tt_l tt_full fr_tx_u">
                 รหัสสมาชิกของคุณคือ: <span id="user_">{{ userData.memberId }}</span>
-                (<span class="amount">{{ formatCurrency(userData.credit) }}</span>)
+                (<span class="amount">{{ formatCurrency(ufaBalance || userData.credit) }}</span>)
             </span>
         </div>
 
@@ -17,7 +17,7 @@
   <div class="credit-box">
     <div class="amount-box float-left">
       <small>ยอดเครดิตของคุณ</small>
-      <p class="amount">{{ formatCurrency(userData.credit) }}</p>
+      <p class="amount">{{ formatCurrency(ufaBalance || userData.credit) }}</p>
     </div>
 
     <div class="button-box float-left">
@@ -266,12 +266,32 @@ const timestamp = ref('')
 const isPromoModalVisible = ref(false)
 const selectedPromoId = ref<number | undefined>(undefined)
 const promotions = ref<Promotion[]>([])
+const ufaBalance = ref<number>(0)
+const api = useApi()
 
 const formatCurrency = (amount: number) => {
     return amount.toLocaleString('th-TH', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     })
+}
+
+// โหลดยอดเงินจาก UFABET API
+const loadBalance = async () => {
+    if (!userData.value.username) {
+        return
+    }
+    
+    try {
+        const result = await api.get(`/api/v1/ufa/balance/${userData.value.username}`)
+        if (result && (result as any).totalBetCredit) {
+            ufaBalance.value = parseFloat((result as any).totalBetCredit)
+        }
+    } catch (error) {
+        console.error('Failed to load balance:', error)
+        // ใช้ credit จาก session เป็น fallback
+        ufaBalance.value = userData.value.credit
+    }
 }
 
 const handleLogout = () => {
@@ -319,6 +339,9 @@ onMounted(() => {
 
         // Load promotions
         loadPromotions()
+        
+        // Load balance from UFABET API
+        loadBalance()
     }
 })
 </script>
