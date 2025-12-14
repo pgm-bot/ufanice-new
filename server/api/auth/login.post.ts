@@ -43,10 +43,7 @@ export default defineEventHandler(async (event) => {
           username: username,
           phone: phone,
           memberId: memberId,
-          // ข้อมูลเพิ่มเติมจะดึงจาก API อื่นถ้าจำเป็น
-          credit: 0, // จะอัปเดตจาก API อื่น
-          gamePassword: '', // จะอัปเดตจาก API อื่น
-          lineConnected: false, // จะอัปเดตจาก API อื่น
+          accessToken: result.token
         },
         token: result.token,
         loggedInAt: new Date().toISOString()
