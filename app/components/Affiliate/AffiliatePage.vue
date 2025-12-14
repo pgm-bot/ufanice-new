@@ -201,14 +201,14 @@ const changeTab = (tab: TabKey) => {
   background-color: #ffffff;
 }
 
-/* หัวข้อหลัก */
+/* ===== TITLE ===== */
 .affiliate-title {
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 18px;
 }
 
-/* รูปแบนเนอร์ */
+/* ===== HERO ===== */
 .affiliate-hero {
   margin-bottom: 18px;
 }
@@ -216,12 +216,11 @@ const changeTab = (tab: TabKey) => {
 .affiliate-hero img {
   display: block;
   width: 100%;
-  
   object-fit: cover;
   border-radius: 6px;
 }
 
-/* กล่องลิงก์ */
+/* ===== LINK CARD ===== */
 .affiliate-link-card {
   background: #fff8d1;
   border: 1px solid #ffd54f;
@@ -247,22 +246,24 @@ const changeTab = (tab: TabKey) => {
   margin-bottom: 12px;
 }
 
+/* ===== LINK ROW (สำคัญที่สุด) ===== */
 .affiliate-link-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   align-items: center;
-  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .affiliate-link-label {
   font-size: 16px;
-  min-width: 72px;
+  white-space: nowrap;
 }
 
 .affiliate-link-input {
   flex: 1;
-  min-width: 220px;
+  min-width: 0; /* 🔑 กัน input ดันปุ่มหลุด */
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 8px 10px;
@@ -270,6 +271,7 @@ const changeTab = (tab: TabKey) => {
 }
 
 .affiliate-link-copy {
+  white-space: nowrap;
   border: none;
   border-radius: 4px;
   padding: 8px 14px;
@@ -277,19 +279,19 @@ const changeTab = (tab: TabKey) => {
   background: #ffc400;
   font-size: 14px;
   font-weight: 600;
-   font-family: 'thaisanslite_r1', sans-serif;
+  font-family: 'thaisanslite_r1', sans-serif;
 }
 
 .affiliate-link-copy:hover {
-  filter: brightness(0.97);
+  filter: brightness(0.95);
 }
 
 .affiliate-link-note {
   font-size: 15px;
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
-/* กล่องคำอธิบายโปร */
+/* ===== DESCRIPTION CARD ===== */
 .affiliate-desc-card {
   border-radius: 6px;
   border: 1px solid #ffe082;
@@ -313,7 +315,7 @@ const changeTab = (tab: TabKey) => {
 
 .affiliate-desc-text {
   margin-bottom: 10px;
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .affiliate-desc-head {
@@ -332,16 +334,12 @@ const changeTab = (tab: TabKey) => {
   margin-bottom: 4px;
 }
 
-.affiliate-example p {
-  margin: 0;
-}
-
 .affiliate-desc-note {
   margin-top: 8px;
   font-size: 16px;
 }
 
-/* Tabs */
+/* ===== TABS ===== */
 .affiliate-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -357,7 +355,7 @@ const changeTab = (tab: TabKey) => {
   cursor: pointer;
   border-radius: 4px;
   font-size: 16px;
-  min-width: 120px;
+
   font-family: 'thaisanslite_r1', sans-serif;
   font-weight: bold;
 }
@@ -367,7 +365,7 @@ const changeTab = (tab: TabKey) => {
   color: #000;
 }
 
-/* เนื้อหาด้านใน */
+/* ===== CONTENT ===== */
 .affiliate-content-card {
   border-radius: 6px;
   border: 1px solid #e0e0e0;
@@ -376,11 +374,7 @@ const changeTab = (tab: TabKey) => {
   font-size: 16px;
 }
 
-.affiliate-empty {
-  font-size: 16px;
-}
-
-/* Responsive */
+/* ===== MOBILE FIX ===== */
 @media (max-width: 640px) {
   .affiliate-page {
     padding: 18px 10px 24px;
@@ -390,17 +384,25 @@ const changeTab = (tab: TabKey) => {
     font-size: 24px;
   }
 
-  .affiliate-link-title {
-    font-size: 18px;
+  /* 🔧 บังคับให้ input + ปุ่มอยู่ในกรอบ */
+  .affiliate-link-row {
+    flex-wrap: wrap;
   }
 
-  .affiliate-desc-card {
-    font-size: 14px;
+  .affiliate-link-input {
+    width: 100%;
+  }
+
+  .affiliate-link-copy {
+    width: 100%;
+    text-align: center;
   }
 
   .affiliate-tab {
     font-size: 15px;
     padding: 6px 10px;
+    flex: 1 1 auto;
   }
 }
+
 </style>
