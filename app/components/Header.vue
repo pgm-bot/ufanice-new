@@ -72,6 +72,7 @@ interface MenuItem {
 }
 
 const route = useRoute()
+const { loggedIn } = useUserSession()
 const isMobileMenuOpen = ref(false)
 
 const siteName = ref('คาสิโนออนไลน์ สมัครเล่นบาคาร่าออนไลน์ สล็อตออนไลน์')
@@ -100,144 +101,154 @@ const getMenuClasses = (baseClasses: string, url: string): string => {
   return baseClasses.replace(/current-menu-item|current_page_item/g, '').trim()
 }
 
-const mobileMenuItems = computed<MenuItem[]>(() => [
-  {
-    id: 'menu-item-60',
-    label: 'หน้าหลัก',
-    url: '/',
-    classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-60', '/'),
-    ariaCurrent: isActive('/')
-  },
-  {
-    id: 'menu-item-61',
-    label: 'คาสิโนออนไลน์',
-    url: '/article/casino-online',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-61', '/article/casino-online'),
-    ariaCurrent: isActive('/article/casino-online')
-  },
-  {
-    id: 'menu-item-64',
-    label: 'แทงบอลออนไลน์',
-    url: '/article/football-betting-online',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-64', '/article/football-betting-online'),
-    ariaCurrent: isActive('/article/football-betting-online')
-  },
-  {
-    id: 'menu-item-398',
-    label: 'เข้าสู่ระบบ',
-    url: '/login',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-398', '/login'),
-    ariaCurrent: isActive('/login')
-  },
-  {
-    id: 'menu-item-2447',
-    label: 'รีวิวบริการ',
-    url: '/article/customer-reviews',
-    classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-2447', '/article/customer-reviews'),
-    ariaCurrent: isActive('/article/customer-reviews')
-  },
-  {
-    id: 'menu-item-401',
-    label: 'สร้างรายได้',
-    url: '/article/affiliate-program',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-401', '/article/affiliate-program'),
-    ariaCurrent: isActive('/article/affiliate-program')
-  },
-  {
-    id: 'menu-item-63',
-    label: 'สมัครสมาชิก',
-    url: '/register',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-63', '/register'),
-    ariaCurrent: isActive('/register')
-  },
-  {
-    id: 'menu-item-65',
-    label: 'โปรโมชั่น',
-    url: '/article/promotions',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-65', '/article/promotions'),
-    ariaCurrent: isActive('/article/promotions')
-  },
-  {
-    id: 'menu-item-rewards',
-    label: 'รางวัลประจำเดือน',
-    url: '/rewards',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-rewards', '/rewards'),
-    ariaCurrent: isActive('/rewards')
-  },
-  {
-    id: 'menu-item-62',
-    label: 'ติดต่อเรา',
-    url: '/article/contact-us',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-62', '/article/contact-us'),
-    ariaCurrent: isActive('/article/contact-us')
-  }
-])
+const mobileMenuItems = computed<MenuItem[]>(() => {
+  const items: MenuItem[] = [
+    {
+      id: 'menu-item-60',
+      label: 'หน้าหลัก',
+      url: '/',
+      classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-60', '/'),
+      ariaCurrent: isActive('/')
+    },
+    {
+      id: 'menu-item-61',
+      label: 'คาสิโนออนไลน์',
+      url: '/article/casino-online',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-61', '/article/casino-online'),
+      ariaCurrent: isActive('/article/casino-online')
+    },
+    {
+      id: 'menu-item-64',
+      label: 'แทงบอลออนไลน์',
+      url: '/article/football-betting-online',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-64', '/article/football-betting-online'),
+      ariaCurrent: isActive('/article/football-betting-online')
+    },
+    {
+      id: 'menu-item-398',
+      label: 'เข้าสู่ระบบ',
+      url: '/login',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-398', '/login'),
+      ariaCurrent: isActive('/login')
+    },
+    {
+      id: 'menu-item-2447',
+      label: 'รีวิวบริการ',
+      url: '/article/customer-reviews',
+      classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-2447', '/article/customer-reviews'),
+      ariaCurrent: isActive('/article/customer-reviews')
+    },
+    {
+      id: 'menu-item-401',
+      label: 'สร้างรายได้',
+      url: '/article/affiliate-program',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-401', '/article/affiliate-program'),
+      ariaCurrent: isActive('/article/affiliate-program')
+    },
+    {
+      id: 'menu-item-63',
+      label: 'สมัครสมาชิก',
+      url: '/register',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-63', '/register'),
+      ariaCurrent: isActive('/register')
+    },
+    {
+      id: 'menu-item-65',
+      label: 'โปรโมชั่น',
+      url: '/article/promotions',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-65', '/article/promotions'),
+      ariaCurrent: isActive('/article/promotions')
+    },
+    {
+      id: 'menu-item-rewards',
+      label: 'รางวัลประจำเดือน',
+      url: '/rewards',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-rewards', '/rewards'),
+      ariaCurrent: isActive('/rewards')
+    },
+    {
+      id: 'menu-item-62',
+      label: 'ติดต่อเรา',
+      url: '/article/contact-us',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-62', '/article/contact-us'),
+      ariaCurrent: isActive('/article/contact-us')
+    }
+  ]
+  
+  // ซ่อนเมนูสมัครสมาชิกถ้า logged in
+  return items.filter(item => !(loggedIn.value && item.id === 'menu-item-63'))
+})
 
-const desktopMenuItems = computed<MenuItem[]>(() => [
-  {
-    id: 'menu-item-16',
-    label: 'หน้าหลัก',
-    url: '/',
-    classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-16', '/'),
-    ariaCurrent: isActive('/')
-  },
-  {
-    id: 'menu-item-23',
-    label: 'คาสิโนออนไลน์',
-    url: '/article/casino-online',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-23', '/article/casino-online'),
-    ariaCurrent: isActive('/article/casino-online')
-  },
-  {
-    id: 'menu-item-37',
-    label: 'แทงบอลออนไลน์',
-    url: '/article/football-betting-online',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-37', '/article/football-betting-online'),
-    ariaCurrent: isActive('/article/football-betting-online')
-  },
-  {
-    id: 'menu-item-2446',
-    label: 'รีวิวบริการ',
-    url: '/article/customer-reviews',
-    classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-2446', '/article/customer-reviews'),
-    ariaCurrent: isActive('/article/customer-reviews')
-  },
-  {
-    id: 'menu-item-417',
-    label: 'สร้างรายได้',
-    url: '/article/affiliate-program',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-417', '/article/affiliate-program'),
-    ariaCurrent: isActive('/article/affiliate-program')
-  },
-  {
-    id: 'menu-item-36',
-    label: 'โปรโมชั่น',
-    url: '/article/promotions',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-36', '/article/promotions'),
-    ariaCurrent: isActive('/article/promotions')
-  },
-  {
-    id: 'menu-item-rewards-desktop',
-    label: 'รางวัลประจำเดือน',
-    url: '/rewards',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-rewards', '/rewards'),
-    ariaCurrent: isActive('/rewards')
-  },
-  {
-    id: 'menu-item-35',
-    label: 'ติดต่อเรา',
-    url: '/article/contact-us',
-    classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-35', '/article/contact-us'),
-    ariaCurrent: isActive('/article/contact-us')
-  },
-  {
-    id: 'menu-item-38',
-    label: 'สมัครสมาชิก',
-    url: '/register',
-    classes: getMenuClasses('ico-register menu-item menu-item-type-post_type menu-item-object-page menu-item-38', '/register'),
-    ariaCurrent: isActive('/register')
-  }
-])
+const desktopMenuItems = computed<MenuItem[]>(() => {
+  const items: MenuItem[] = [
+    {
+      id: 'menu-item-16',
+      label: 'หน้าหลัก',
+      url: '/',
+      classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-16', '/'),
+      ariaCurrent: isActive('/')
+    },
+    {
+      id: 'menu-item-23',
+      label: 'คาสิโนออนไลน์',
+      url: '/article/casino-online',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-23', '/article/casino-online'),
+      ariaCurrent: isActive('/article/casino-online')
+    },
+    {
+      id: 'menu-item-37',
+      label: 'แทงบอลออนไลน์',
+      url: '/article/football-betting-online',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-37', '/article/football-betting-online'),
+      ariaCurrent: isActive('/article/football-betting-online')
+    },
+    {
+      id: 'menu-item-2446',
+      label: 'รีวิวบริการ',
+      url: '/article/customer-reviews',
+      classes: getMenuClasses('menu-item menu-item-type-custom menu-item-object-custom menu-item-2446', '/article/customer-reviews'),
+      ariaCurrent: isActive('/article/customer-reviews')
+    },
+    {
+      id: 'menu-item-417',
+      label: 'สร้างรายได้',
+      url: '/article/affiliate-program',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-417', '/article/affiliate-program'),
+      ariaCurrent: isActive('/article/affiliate-program')
+    },
+    {
+      id: 'menu-item-36',
+      label: 'โปรโมชั่น',
+      url: '/article/promotions',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-36', '/article/promotions'),
+      ariaCurrent: isActive('/article/promotions')
+    },
+    {
+      id: 'menu-item-rewards-desktop',
+      label: 'รางวัลประจำเดือน',
+      url: '/rewards',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-rewards', '/rewards'),
+      ariaCurrent: isActive('/rewards')
+    },
+    {
+      id: 'menu-item-35',
+      label: 'ติดต่อเรา',
+      url: '/article/contact-us',
+      classes: getMenuClasses('menu-item menu-item-type-post_type menu-item-object-page menu-item-35', '/article/contact-us'),
+      ariaCurrent: isActive('/article/contact-us')
+    },
+    {
+      id: 'menu-item-38',
+      label: 'สมัครสมาชิก',
+      url: '/register',
+      classes: getMenuClasses('ico-register menu-item menu-item-type-post_type menu-item-object-page menu-item-38', '/register'),
+      ariaCurrent: isActive('/register')
+    }
+  ]
+  
+  // ซ่อนเมนูสมัครสมาชิกถ้า logged in
+  return items.filter(item => !(loggedIn.value && item.id === 'menu-item-38'))
+})
 
 const toggleMobileMenu = () => {
   isMobileMenuOpen.value = !isMobileMenuOpen.value
