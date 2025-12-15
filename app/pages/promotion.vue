@@ -16,20 +16,20 @@
        <hr>
    
        <!-- โปร 1: สมาชิกใหม่รับโบนัส 50% -->
-       <p style="text-align: center">
-         <img src="/img/promotion/1.jpg"
+
+        <div v-for="item in result.data" :key="item.id">
+          <p style="text-align: center">
+         <img :src="`/img/promotion/${item.bonus_id}.png`" 
               alt="สมาชิกใหม่รับโบนัส 50%" width="680" height="210">
        </p>
-       <p style="text-align: center">
-         <strong>โปรโมชั่น<br>โบนัสคาสิโนออนไลน์ – สมาชิกใหม่รับโบนัส 50%</strong><br>
-         รับโบนัสสูงสุดไม่เกิน 1000 บาท เดิมพันกีฬา ทำเทิร์น 15 เท่า เล่นคาสิโน ทำเทิร์น 20 เท่า<br>
-         * หากทีมงานตรวจสอบว่ามีการรับโบนัสเพื่อแทงสวน ทางทีมงานจะไม่ทำรายการถอนให้ทุกกรณี<br>
-         ** หากรับโบนัสอยู่จะไม่สามารถเล่นเกมที่ซื้อ Freespin ได้ทุกเกม<br>
-         *** โปรโมชั่นนี้จะไม่นับยอดเทิร์นตัวเกมประเภทยิงปลา<br>
-         ==&gt; <strong><a href="/login_/#target">รับโบนัส</a></strong> &lt;==
-       </p>
+       <p style="text-align: center" v-html="item.bonus_info" />
+       <p style="text-align: center" v-html="item.bonus_red_info" />
+       <p v-html="item.bonus_red_info" />
+    
    
        <hr>
+        </div>
+
    
        <!-- โปร 2: ฝากครั้งแรกของวันรับโบนัส 10% -->
        <p style="text-align: center">
@@ -142,15 +142,18 @@
   </template>
 
   <script setup lang="ts">
+  const api = useApi()
   useHead({
     title: 'โปรโมชั่น - UFANICE',
     meta: [
       { name: 'description', content: 'โปรโมชั่นของ UFANICE' }
     ]
   })
-   const promotionPost = await $fetch<{ status: number; message: string; data: any }>('/api/bonus/showbonus', {
-            method: 'GET',
-        })
+  //  const promotionPost = await $fetch<{ status: number; message: string; data: any }>('/api/bonus/showbonus', {
+  //           method: 'GET',
+  //       })
+  const result = await api.get<{ status: number; message: string; data: any }>(`/api/v1/bonus/showbonus`)
 
-        console.log(promotionPost)
+
+        // console.log(promotionPost)
   </script>

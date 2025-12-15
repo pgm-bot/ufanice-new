@@ -102,7 +102,7 @@ export const useApi = () => {
       return await $fetch<T>(url, params)
     } catch (err: any) {
       // สามารถ log เพิ่มเติมได้ที่นี่
-      useToast().error(err?.data?.message || err?.message || 'เกิดข้อผิดพลาด')
+      // useToast().error(err?.data?.message || err?.message || 'เกิดข้อผิดพลาด')
       throw err
     }
   }
